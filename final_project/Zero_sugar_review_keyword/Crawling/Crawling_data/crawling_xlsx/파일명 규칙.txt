@@ -1,0 +1,27 @@
+상품명_개수_사이트명_번호_crawling
+
+같은 사이트 번호가 있을경우
+[01, 02, 03...]
+
+코카콜라제로	CocacolaZero	CocacolaZ
+스프라이트제로	SpriteZero	SpriteZ
+원에이엠스파클링	1amSparkling	1amSparkling
+부르르제로콜라	BurrZeroCola	BurrZcola
+부르르제로사이다	BurrZeroCider	BurrZcider
+나랑드사이다	NarangdCider	NarangdCider
+펩시콜라제로	PepsiColaZero	PepsiColaZ
+칠성사이다제로	ChilsungCiderZero	ChilsungCiderZ
+웰치스제로	WelchsZero	WelchsZ
+라인바사 탄산수	Reinwasser	Reinwasser
+미네마인 탄산수	Minemine	Minemine
+빅토리아 탄산수	Victoria		Victoria
+씨그램		Seagram		Seagram
+트레비		Trevi		Trevi
+이마트 노브랜드 스파클링 에이드 라임/ 백포도	NobrandSparkling
+
+네이버쇼핑	NaverShop
+네이버 브랜드숍	NaverBrandshop
+다나와		Danawa
+쿠팡		Coupang
+
+1행 컬럼명 Review로 통일
