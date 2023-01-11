@@ -1,0 +1,89 @@
+하이차트 추가
+https://www.highcharts.com/blog/tutorials/network-graph/
+
+pokemon 텍스트 네트워킹
+https://anweh.tistory.com/33
+
+python colab 패키지 구글드라이브 설치
+https://teddylee777.github.io/colab/colab%EC%97%90%EC%84%9C-python%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A5%BC-permanently-%EC%9D%B8%EC%8A%A4%ED%86%A8%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
+
+wix ppt때 사용했던 부트스트랩 참고 홈페이지
+https://ko.wix.com/website-template/view/html/3078?originUrl=https%3A%2F%2Fko.wix.com%2Fwebsite%2Ftemplates%2Fhtml%2Frestaurants-food%2Ffood-drinks%2F2&tpClick=view_button&esi=e2392428-b879-4790-839b-fd15ccb21026
+
+LDA 토픽 모델링
+https://heytech.tistory.com/401
+
+Dash
+https://towardsdatascience.com/visualizing-networks-in-python-d70f4cbeb259
+
+pyvis
+https://pyvis.readthedocs.io/en/latest/#
+
+하이차트
+https://www.highcharts.com
+
+부트스트랩
+https://themewagon.github.io/titan/index_mp_fullscreen_video_background.html#about
+https://themewagon.github.io/timer-html/about.html
+https://themewagon.github.io/titan/portfolio_single_featured_image1.html
+
+
+아키텍쳐
+https://www.youtube.com/watch?v=1hfhUmb_bRc
+
+potly dash
+https://www.youtube.com/watch?v=hi-_5c0Xbik
+
+드라마 대본을 이용한 네트워크
+https://www.slideshare.net/koorukuroo/20140830-pycon2014-networkx
+
+네이버 영화 키워드 분석
+https://haystar.tistory.com/13
+
+Knser_Ney 언어 모형을 활용한 한국어 초성체 해석기
+https://bab2min.tistory.com/603
+
+네이버 랭킹 뉴스 가시화
+https://mons1220.tistory.com/241
+
+온라인 리뷰의 의미연결망 분석을 통한 국내 대형항공사 인식에 관한 연구
+
+https://www.researchgate.net/profile/Hyun-Jeong-Ban/publication/336240387_A_Study_on_the_Recognition_of_Full_Service_Carrier_in_South_Korea_through_the_Semantic_Network_Analysis_of_Online_Review/links/5d961e67458515c1d391a3ed/A-Study-on-the-Recognition-of-Full-Service-Carrier-in-South-Korea-through-the-Semantic-Network-Analysis-of-Online-Review.pdf
+
+카이 형태소 분석기 추가
+https://jellybeanz.medium.com/khaiii-%ED%98%95%ED%83%9C%EC%86%8C-%EB%B6%84%EC%84%9D%EA%B8%B0-%EC%82%AC%EC%A0%84-%EC%B6%94%EA%B0%80-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-5a8e69179e27
+
+코랩 패키지 설치
+https://psystat.tistory.com/144
+
+마이리얼트립 여행 후기 데이터 분석(네트워크)
+https://medium.com/myrealtrip-product/%EB%A7%88%EC%9D%B4%EB%A6%AC%EC%96%BC%ED%8A%B8%EB%A6%BD-%EC%97%AC%ED%96%89-%ED%9B%84%EA%B8%B0-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D-be3f6c557ca2
+
+카이 품사 리스트
+https://sy-log.tistory.com/58
+카이 사용법
+https://sy-log.tistory.com/59
+
+자연어 처리 입문(자연어 종류)
+https://mangastorytelling.tistory.com/entry/%EB%94%A5%EB%9F%AC%EB%8B%9D%EC%9D%84%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%90%EC%97%B0%EC%96%B4-%EC%B2%98%EB%A6%AC-%EC%9E%85%EB%AC%B8-0210-%ED%95%9C%EA%B5%AD%EC%96%B4-%EC%A0%84%EC%B2%98%EB%A6%AC-%ED%8C%A8%ED%82%A4%EC%A7%80-Text-Preprocessing-Tools-for-Korean-Text
+
+한국어 형태소 분석기 비교
+https://blog.cosadama.com/articles/2021-practicenlp-01/
+
+한국어 형태소 분석기 비교 2
+https://soohee410.github.io/compare_tagger
+
+한국어 전처리 패키지
+https://uding.tistory.com/11
+
+https://mola23.tistory.com/84
+네이버 영화리뷰 키워드 분석
+https://haystar.tistory.com/11#toc141
+
+Korean Stopwords
+https://www.ranks.nl/stopwords/korean
+
+소스트리 강좌
+https://www.inflearn.com/course/git-%EA%B0%95%EC%A2%8C-%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9
+
+
