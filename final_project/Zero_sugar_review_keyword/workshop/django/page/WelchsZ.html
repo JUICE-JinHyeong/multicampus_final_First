@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 1. static 사용 -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Victoria</title>
+    <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+    <!-- 3. css 속성 가져오기 -->
+    <link rel="stylesheet" href="{% static 'chart/css/line.css' %}">
+
+</head>
+<body>
+	<!-- 4. 사이트 html 하단 figure 태그 -->
+	<figure class="highcharts-figure">
+      <div id="container"></div>
+      <p class="highcharts-description"></p>
+    </figure>
+
+    <!-- 5. <script src="{% static 'chart/js/line.js' %}" ></script> -->
+    <!-- 6. script -->
+
+    <script >
+        var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+
+
+               nodes['웰치스'] = {
+                id : '웰치스' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+               nodes['맛'] = {
+                id : '맛' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+               nodes['구매'] = {
+                id : '구매' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'orange'
+               } ;
+
+                for (let nd_2 in {'오렌지' : 1 , '사은품' : 2 , '차이':3 , '기존':4 , '탄산':5, '원래':6,'배송':7,'생각':8,'특유':10,'포도':11,'마음':12,'느낌':13,'컵':14,'부담':15}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#DDA0DD'
+                };}
+
+                for (let nd_2 in {'음료' : 1 , '오렌지' : 2 , '포도' : 3 , '사은품' : 4 , '제품' :5 }) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : 'pink'
+                };}
+
+                for (let nd_2 in {'칼로리' : 1 , '오리지널' : 2 , '그대로' : 3 }) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : 'yellow'
+                };}
+                for (let nd_2 in {'빠르다' : 1 , '가격' : 2 , '포장' : 3 }) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#00FF00'
+                };}
+
+
+               nodes['배송'] = {
+                    id : '배송' ,
+                    marker : {
+                        radius : 30
+                    } ,
+                    color : '#90EE90'
+                    };
+
+              });
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 80 ,
+            height: 500
+          },
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: true,
+                integration: 'verlet',
+                linkLength: 150
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+            ['구매', '음료'],
+            ['구매', '오렌지'],
+            ['구매', '포도'],
+            ['구매', '사은품'],
+            ['구매', '제품'],
+            ['맛', '오렌지'],
+            ['맛', '사은품'],
+            ['맛', '차이'],
+            ['맛', '기존'],
+            ['맛', '탄산'],
+            ['맛', '음료'],
+            ['맛', '원래'],
+            ['맛', '칼로리'],
+            ['맛', '배송'],
+            ['맛', '웰치스'],
+            ['맛', '생각'],
+            ['맛', '오리지널'],
+            ['맛', '구매'],
+            ['맛', '특유'],
+            ['맛', '제품'],
+            ['맛', '그대로'],
+            ['맛', '포도'],
+            ['맛', '마음'],
+            ['맛', '느낌'],
+            ['맛', '컵'],
+            ['맛', '빠르다'],
+            ['맛', '부담'],
+            ['배송', '제품'],
+            ['배송', '구매'],
+            ['배송', '포장'],
+            ['배송', '가격'],
+            ['배송', '빠르다'],
+            ['배송', '음료'],
+            ['사은품', '마음'],
+            ['웰치스', '컵'],
+            ['웰치스', '마음'],
+            ['웰치스', '포도'],
+            ['웰치스', '생각'],
+            ['웰치스', '구매'],
+            ['웰치스', '특유'],
+            ['웰치스', '오렌지'],
+            ['웰치스', '원래'],
+            ['웰치스', '기존'],
+            ['웰치스', '탄산'],
+            ['웰치스', '부담'],
+            ['웰치스', '배송'],
+            ['웰치스', '차이'],
+            ['웰치스', '사은품'],
+            ['웰치스', '느낌']
+
+            ]
+          }]
+        });
+    </script>
+</body>
+</html>

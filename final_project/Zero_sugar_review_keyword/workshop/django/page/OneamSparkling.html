@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 1. static 사용 -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>OneamSparkling</title>
+    <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+</head>
+<body>
+	<!-- 4. 사이트 html 하단 figure 태그 -->
+	<figure class="highcharts-figure">
+      <div id="container"></div>
+      <p class="highcharts-description"></p>
+    </figure>
+
+    <!-- 5. <script src="{% static 'chart/js/line.js' %}" ></script> -->
+    <!-- 6. script -->
+
+    <script >
+        var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+                for (let nd_2 in {'닭가슴살':1, '음료':2, '콜라':3, '재구매':4, '탄산음료':5, '원에이엠':6, '베리':7
+                , '오렌지':8, '가격':9, '별로':10, '부담':11, '구매':12, '제로':13, '제품':14, '스파클링':15
+                , '파인애플':16, '최고':17, '데미소다':18, '추천':19, '생각':20, '처음':21, '서비스':22, '빠르다':23, '배송':24, '사이다':25}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#FF6347'
+                };}
+
+                for (let nd_2 in {'닭가슴살':1, '음료':2, '재구매':3, '콜라':4, '탄산음료':5, '다이어트':6, '베리':7, '가격':8
+                , '탄산수':9, '제로':10, '칼로리':11, '제품':12, '파인애플':13, '애플':14, '추천':15, '라임':16, '생각':17, '사은품':18, '처음':19, '서비스':20, '배송':21, '탄산':22}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#ADFF2F'
+                };}
+
+                for (let nd_2 in {'닭가슴살':1 , '콜라':2 , '제품':3 , '가격':4 , '처음':5 , '추천':6 , '생각':7 , '탄산음료':8 , '서비스':9 , '제로':10 , '파인애플':11
+                , '음료':12 , '배송':13 , '베리':14 , '재구매':15}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : 'pink'
+                };}
+
+               nodes['원에이엠'] = {
+                id : '원에이엠' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+               nodes['맛'] = {
+                id : '맛' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+
+               nodes['구매'] = {
+                id : '구매' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'orange'
+               } ;
+
+              });
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 80 ,
+            height: 500
+          },
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: true,
+                integration: 'verlet',
+                linkLength: 150
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+            ['구매', '탄산음료'],
+            ['구매', '제품'],
+            ['구매', '제로'],
+            ['구매', '서비스'],
+            ['구매', '배송'],
+            ['구매', '파인애플'],
+            ['구매', '닭가슴살'],
+            ['구매', '음료'],
+            ['구매', '사은품'],
+            ['구매', '다이어트'],
+            ['구매', '탄산'],
+            ['구매', '추천'],
+            ['구매', '재구매'],
+            ['구매', '생각'],
+            ['구매', '라임'],
+            ['구매', '칼로리'],
+            ['구매', '베리'],
+            ['구매', '가격'],
+            ['구매', '탄산수'],
+            ['구매', '애플'],
+            ['구매', '콜라'],
+            ['구매', '처음'],
+            ['라임', '파인애플'],
+            ['라임', '음료'],
+            ['라임', '베리'],
+            ['맛', '원에이엠'],
+            ['맛', '닭가슴살'],
+            ['맛', '콜라'],
+            ['맛', '제품'],
+            ['맛', '데미소다'],
+            ['맛', '별로'],
+            ['맛', '가격'],
+            ['맛', '오렌지'],
+            ['맛', '처음'],
+            ['맛', '추천'],
+            ['맛', '사이다'],
+            ['맛', '스파클링'],
+            ['맛', '부담'],
+            ['맛', '생각'],
+            ['맛', '빠르다'],
+            ['맛', '구매'],
+            ['맛', '최고'],
+            ['맛', '탄산음료'],
+            ['맛', '서비스'],
+            ['맛', '제로'],
+            ['맛', '파인애플'],
+            ['맛', '음료'],
+            ['맛', '배송'],
+            ['맛', '베리'],
+            ['맛', '재구매']
+
+            ]
+          }]
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 1. static 사용 -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>BurrZcola</title>
+    <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+</head>
+<body>
+	<!-- 4. 사이트 html 하단 figure 태그 -->
+	<figure class="highcharts-figure">
+      <div id="container"></div>
+      <p class="highcharts-description"></p>
+    </figure>
+
+    <!-- 5. <script src="{% static 'chart/js/line.js' %}" ></script> -->
+    <!-- 6. script -->
+
+    <script >
+        var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+                for (let nd_2 in {'가격':1, '부르르':2, '가성비':3, '탄산':4, '배송':5, '제로콜라':6, '박스':7, '생각':8, '사이다':9, '제품':10}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#FF6347'
+                };}
+
+                for (let nd_2 in {'가성비':1, '음료':2, '제품':3, '콜라':4, '맥콜':5, '처음':6, '사이다':7, '구매':8
+                , '제로':9, '배송':10, '생각':11, '캔':12, '제로콜라':13, '칼로리':14, '가격':15, '부르르':16, '느낌':17, '재구매':18, '탄산':19, '코카콜라':20, '펩시':21}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#ADFF2F'
+                };}
+
+                for (let nd_2 in {'가격':1, '가성비':2, '코카콜라':3, '펩시':4, '생각':5, '캔':6, '사이다':7, '제로콜라':8}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#00FA9A'
+                };}
+
+                for (let nd_2 in {'제품':1 , '가격':2, '탄산':3 , '사이다':4 , '부르르':5 , '배송':6 , '생각':7 , '가성비':8 , '제로콜라':9}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : 'pink'
+                };}
+
+                for (let nd_2 in {'최고':1, '빠르다':2 , '박스':3}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    }
+                };}
+
+
+               nodes['부르르'] = {
+                id : '부르르' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+               nodes['맛'] = {
+                id : '맛' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+
+               nodes['구매'] = {
+                id : '구매' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'orange'
+               } ;
+
+              });
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 80 ,
+            height: 500
+          },
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: true,
+                integration: 'verlet',
+                linkLength: 150
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+            ['가격', '생각'],
+            ['가격', '코카콜라'],
+            ['가격', '배송'],
+            ['가성비', '최고'],
+            ['구매', '제품'],
+            ['구매', '가격'],
+            ['구매', '탄산'],
+            ['구매', '사이다'],
+            ['구매', '부르르'],
+            ['구매', '배송'],
+            ['구매', '생각'],
+            ['구매', '가성비'],
+            ['구매', '박스'],
+            ['구매', '제로콜라'],
+            ['맛', '재구매'],
+            ['맛', '캔'],
+            ['맛', '느낌'],
+            ['맛', '맥콜'],
+            ['맛', '제품'],
+            ['맛', '처음'],
+            ['맛', '칼로리'],
+            ['맛', '사이다'],
+            ['맛', '펩시'],
+            ['맛', '코카콜라'],
+            ['맛', '생각'],
+            ['맛', '배송'],
+            ['맛', '음료'],
+            ['맛', '콜라'],
+            ['맛', '구매'],
+            ['맛', '가격'],
+            ['맛', '가성비'],
+            ['맛', '제로콜라'],
+            ['맛', '탄산'],
+            ['맛', '부르르'],
+            ['맛', '제로'],
+            ['배송', '제품'],
+            ['배송', '빠르다'],
+            ['부르르', '생각'],
+            ['부르르', '캔'],
+            ['부르르', '가성비'],
+            ['부르르', '제로콜라'],
+            ['부르르', '펩시'],
+            ['부르르', '가격'],
+            ['부르르', '코카콜라'],
+            ['부르르', '사이다'],
+            ['제로', '음료'],
+            ['제로', '가성비'],
+            ['제로', '제로콜라'],
+            ['제로', '탄산'],
+            ['제로', '구매']
+            ]
+          }]
+
+        });
+    </script>
+</body>
+</html>

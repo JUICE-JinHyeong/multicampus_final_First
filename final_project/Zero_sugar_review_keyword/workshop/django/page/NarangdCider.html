@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 1. static 사용 -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>NarangdCider</title>
+    <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+</head>
+<body>
+	<!-- 4. 사이트 html 하단 figure 태그 -->
+	<figure class="highcharts-figure">
+      <div id="container"></div>
+      <p class="highcharts-description"></p>
+    </figure>
+
+    <!-- 5. <script src="{% static 'chart/js/line.js' %}" ></script> -->
+    <!-- 6. script -->
+
+    <script >
+        var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+                for (let nd_2 in {'가격':1, '포장':2, '재구매':3, '기간':4, '도움':5, '배송상태':6, '사용':7, '유효':8, '크기':9, '후기':10, '제로':11, '칼로리':12}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#FF6347'
+                };}
+
+                for (let nd_2 in {'제품':1, '가격':2, '빠르다':3, '재구매':4, '포장':5, '도움':6, '나랑드사이다':7, '맛':8, '탄산':9
+                , '사용':10, '사이다':11, '후기':12, '제로':13, '칼로리':14}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#ADFF2F'
+                };}
+
+                for (let nd_2 in {'맛':1, '탄산':2, '사이다':3, '제로':4, '칼로리':5}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#00FA9A'
+                };}
+
+
+                for (let nd_2 in {'사용':1 , '후기':2 , '재구매':3 , '가격':4 , '포장':5 , '제로':6 , '칼로리':7 , '도움':8 , '배송':9}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : 'pink'
+                };}
+
+                for (let nd_2 in {'작성':1 , '앱':2 , '의향':3 , '옥션':4 , '안드로이드':5}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    }
+                };}
+
+
+               nodes['나랑드사이다'] = {
+                id : '나랑드사이다' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+               nodes['맛'] = {
+                id : '맛' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+
+               nodes['구매'] = {
+                id : '구매' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'orange'
+               } ;
+
+              });
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 80 ,
+            height: 500
+          },
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: true,
+                integration: 'verlet',
+                linkLength: 150
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+            ['구매', '사용'],
+            ['구매', '도움'],
+            ['구매', '재구매'],
+            ['구매', '탄산'],
+            ['구매', '후기'],
+            ['구매', '빠르다'],
+            ['구매', '가격'],
+            ['구매', '맛'],
+            ['구매', '포장'],
+            ['구매', '칼로리'],
+            ['구매', '나랑드사이다'],
+            ['구매', '사이다'],
+            ['구매', '제로'],
+            ['구매', '제품'],
+            ['기간', '배송상태'],
+            ['기간', '도움'],
+            ['기간', '후기'],
+            ['기간', '의향'],
+            ['기간', '크기'],
+            ['기간', '유효'],
+            ['나랑드사이다', '탄산'],
+            ['나랑드사이다', '사이다'],
+            ['나랑드사이다', '맛'],
+            ['나랑드사이다', '제로'],
+            ['나랑드사이다', '칼로리'],
+            ['도움', '작성'],
+            ['도움', '앱'],
+            ['도움', '후기'],
+            ['도움', '옥션'],
+            ['도움', '크기'],
+            ['도움', '배송상태'],
+            ['도움', '안드로이드'],
+            ['맛', '사용'],
+            ['맛', '후기'],
+            ['맛', '재구매'],
+            ['맛', '가격'],
+            ['맛', '포장'],
+            ['맛', '크기'],
+            ['맛', '배송상태'],
+            ['맛', '제로'],
+            ['맛', '칼로리'],
+            ['맛', '유효'],
+            ['맛', '기간'],
+            ['맛', '도움'],
+            ['배송', '빠르다'],
+            ['배송', '나랑드사이다'],
+            ['배송', '가격'],
+            ['배송', '사이다'],
+            ['배송', '맛'],
+            ['배송', '구매']
+            ]
+          }]
+
+        });
+    </script>
+</body>
+</html>

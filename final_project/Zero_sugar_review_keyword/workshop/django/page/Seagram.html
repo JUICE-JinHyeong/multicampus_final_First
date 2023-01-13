@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 1. static 사용 -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Seagram</title>
+    <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+</head>
+<body>
+	<!-- 4. 사이트 html 하단 figure 태그 -->
+	<figure class="highcharts-figure">
+      <div id="container"></div>
+      <p class="highcharts-description"></p>
+    </figure>
+
+    <!-- 5. <script src="{% static 'chart/js/line.js' %}" ></script> -->
+    <!-- 6. script -->
+
+    <script >
+        var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+                for (let nd_2 in {'레몬':1, '분리수거':2, '라임':3, '가격':4, '무라벨':5, '제품':6, '피치':7}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#FF6347'
+                };}
+
+                for (let nd_2 in {'탄산수':1, '레몬':2, '빠르다':3, '맛':4, '청':5, '제품':6, '포장':7
+                , '여름':8, '생각':9, '분리수거':10, '라임':11, '가격':12, '유통기한':13, '재활용':14, '탄산':15
+                , '할인':16, '배송':17, '음료':18, '무라벨':19, '행사':20, '라벨':21, '씨그램':22, '탄산음료':23, '박스':24, '에이드':25}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#ADFF2F'
+                };}
+
+                for (let nd_2 in {'씨그램':1, '레몬':2, '생각':3, '빠르다':4, '분리수거':5, '맛':6, '제품':7, '가격':8, '환경':9, '재활용':10, '분리':11, '탄산':12}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#00FA9A'
+                };}
+
+
+                for (let nd_2 in {'분리수거':1 , '제품':2 , '레몬':3}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : 'pink'
+                };}
+
+                for (let nd_2 in {'재구매':1, '여름':2 }) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    }
+                };}
+
+
+               nodes['씨그램'] = {
+                id : '씨그램' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+               nodes['맛'] = {
+                id : '맛' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+
+               nodes['구매'] = {
+                id : '구매' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'orange'
+               } ;
+
+               nodes['라벨'] = {
+                id : '라벨' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#D8BFD8'
+               } ;
+
+              });
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 80 ,
+            height: 500
+          },
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: true,
+                integration: 'verlet',
+                linkLength: 150
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+            ['가격', '빠르다'],
+            ['구매', '음료'],
+            ['구매', '에이드'],
+            ['구매', '할인'],
+            ['구매', '유통기한'],
+            ['구매', '박스'],
+            ['구매', '행사'],
+            ['구매', '레몬'],
+            ['구매', '청'],
+            ['구매', '빠르다'],
+            ['구매', '재활용'],
+            ['구매', '라임'],
+            ['구매', '여름'],
+            ['구매', '분리수거'],
+            ['구매', '무라벨'],
+            ['구매', '탄산'],
+            ['구매', '탄산음료'],
+            ['구매', '포장'],
+            ['구매', '맛'],
+            ['구매', '제품'],
+            ['구매', '가격'],
+            ['구매', '탄산수'],
+            ['구매', '배송'],
+            ['구매', '생각'],
+            ['구매', '씨그램'],
+            ['구매', '라벨'],
+            ['라벨', '씨그램'],
+            ['라벨', '분리'],
+            ['라벨', '가격'],
+            ['라벨', '레몬'],
+            ['라벨', '생각'],
+            ['라벨', '재활용'],
+            ['라벨', '환경'],
+            ['라벨', '탄산'],
+            ['라벨', '제품'],
+            ['라벨', '빠르다'],
+            ['라벨', '맛'],
+            ['라벨', '분리수거'],
+            ['레몬', '청'],
+            ['레몬', '라임'],
+            ['맛', '분리수거'],
+            ['맛', '피치'],
+            ['맛', '가격'],
+            ['맛', '라임'],
+            ['맛', '무라벨'],
+            ['맛', '제품'],
+            ['맛', '레몬'],
+            ['배송', '무라벨'],
+            ['배송', '재구매'],
+            ['배송', '분리수거']
+
+            ]
+          }]
+
+        });
+    </script>
+</body>
+</html>

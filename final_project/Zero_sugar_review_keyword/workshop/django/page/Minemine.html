@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 1. static 사용 -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Minemine</title>
+    <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+    <!-- 3. css 속성 가져오기 -->
+    <link rel="stylesheet" href="{% static 'chart/css/line.css' %}">
+
+</head>
+<body>
+	<!-- 4. 사이트 html 하단 figure 태그 -->
+	<figure class="highcharts-figure">
+      <div id="container"></div>
+      <p class="highcharts-description"></p>
+    </figure>
+
+    <!-- 5. <script src="{% static 'chart/js/line.js' %}" ></script> -->
+    <!-- 6. script -->
+    <script>
+        var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+
+
+               nodes['미네마인'] = {
+                id : '미네마인' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+               nodes['배송'] = {
+                id : '배송' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+               nodes['구매'] = {
+                id : '구매' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'orange'
+               } ;
+
+               for (let nd in {'탄산수' : 1 , '가격' : 2 , '제품' : 3 , '가성비' : 4, '맛' :5 , '빠르다' : 6, '재구매' : 7}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : 'pink'
+                };}
+
+               for (let nd_2 in {'포장' : 1 , '마음' : 2 , '기사' : 3 , '택배' : 4, '유통기한' :5 }) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#ADFF2F'
+                };}
+
+                for (let nd_3 in {'생수' : 1 , '스파클링' : 2 , '동원' : 3 , '레몬' : 4, '여름' :5  , '플레인' :6 , '최고' : 7 , '처음' : 8, '청' : 9}) {
+                nodes[nd_3] = {
+                    id : nd_3 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#00FA9A'
+                };}
+
+                nodes['라임'] = {
+                    id : '라임' ,
+                    marker : {
+                        radius : 10
+                    } ,
+                    color : '#8A2BE2'
+                }
+
+
+
+              });
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 80 ,
+            height: 500
+          },
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: true,
+                integration: 'verlet',
+                linkLength: 100
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+            ['가격', '빠르다'],
+            ['가격', '미네마인'],
+            ['가격', '제품'],
+            ['가격', '재구매'],
+            ['가격', '맛'],
+            ['가격', '최고'],
+            ['가성비', '최고'],
+            ['구매', '미네마인'],
+            ['구매', '최고'],
+            ['구매', '동원'],
+            ['구매', '빠르다'],
+            ['구매', '맛'],
+            ['구매', '레몬'],
+            ['구매', '스파클링'],
+            ['구매', '처음'],
+            ['구매', '가성비'],
+            ['구매', '가격'],
+            ['구매', '플레인'],
+            ['구매', '재구매'],
+            ['구매', '여름'],
+            ['구매', '청'],
+            ['구매', '탄산수'],
+            ['구매', '생수'],
+            ['구매', '제품'],
+            ['동원', '스파클링'],
+            ['레몬', '플레인'],
+            ['맛', '라임'],
+            ['맛', '레몬'],
+            ['맛', '재구매'],
+            ['맛', '플레인'],
+            ['맛', '빠르다'],
+            ['미네마인', '스파클링'],
+            ['미네마인', '동원'],
+            ['배송', '가격'],
+            ['배송', '구매'],
+            ['배송', '포장'],
+            ['배송', '마음'],
+            ['배송', '기사'],
+            ['배송', '제품'],
+            ['배송', '유통기한'],
+            ['배송', '빠르다'],
+            ['배송', '택배'],
+            ['배송', '미네마인'],
+            ['배송', '가성비'],
+            ['배송', '탄산수'],
+            ['배송', '재구매'],
+            ['배송', '빠르다'],
+            ['배송', '맛']
+            ]
+          }]
+        });
+    </script>
+</body>
+</html>

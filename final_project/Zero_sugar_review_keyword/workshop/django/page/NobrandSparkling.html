@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 1. static 사용 -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>NobrandSparkling</title>
+    <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+</head>
+<body>
+	<!-- 4. 사이트 html 하단 figure 태그 -->
+	<figure class="highcharts-figure">
+      <div id="container"></div>
+      <p class="highcharts-description"></p>
+    </figure>
+
+    <!-- 5. <script src="{% static 'chart/js/line.js' %}" ></script> -->
+    <!-- 6. script -->
+
+    <script >
+        var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+                for (let nd_2 in {'가성비':1, '스파클링':2, '최고':3, '제품':4, '망고':5, '상큼':6, '사이다':7, '구매':8, '오렌지':9
+                , '배송':10, '생각':11, '탄산음료':12, '포도':13, '칼로리':14, '가격':15, '재구매':16, '탄산':17, '노브랜드':18, '라임':19, '청포도':20, '탄산수':21}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#FF6347'
+                };}
+
+                for (let nd_2 in {'칼로리':1, '가격':2, '가성비':3, '탄산수':4, '탄산':5, '제로':6, '배송':7, '품절':8
+                , '음료':9, '처음':10, '노브랜드':11, '탄산음료':12, '스파클링':13, '라임':14, '사이다':15, '제품':16}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#ADFF2F'
+                };}
+
+                for (let nd_2 in {'오렌지':1, '망고':3, '상큼':4, '노브랜드':5, '스파클링':6, '사이다':7, '탄산수':8}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#00FA9A'
+                };}
+
+                for (let nd_2 in {'제품':1 , '가성비':2, '사이다':3, '칼로리':4, '가격':5, '탄산':6, '라임':7, '배송':8, '탄산음료':9, '스파클링':10, '노브랜드':11, '탄산수':12}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : 'pink'
+                };}
+                nodes['갑'] = {
+                id : '갑' ,
+                marker : {
+                    radius : 20
+                    }
+               };
+
+               nodes['노브랜드'] = {
+                id : '노브랜드' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+               nodes['맛'] = {
+                id : '맛' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+
+               nodes['구매'] = {
+                id : '구매' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'orange'
+               } ;
+
+              });
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 80 ,
+            height: 500
+          },
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: true,
+                integration: 'verlet',
+                linkLength: 150
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+            ['가성비', '노브랜드'],
+            ['가성비', '음료'],
+            ['가성비', '갑'],
+            ['가성비', '최고'],
+            ['구매', '제품'],
+            ['구매', '가성비'],
+            ['구매', '품절'],
+            ['구매', '사이다'],
+            ['구매', '칼로리'],
+            ['구매', '가격'],
+            ['구매', '탄산'],
+            ['구매', '라임'],
+            ['구매', '배송'],
+            ['구매', '제로'],
+            ['구매', '탄산음료'],
+            ['구매', '처음'],
+            ['구매', '스파클링'],
+            ['구매', '노브랜드'],
+            ['구매', '음료'],
+            ['구매', '탄산수'],
+            ['노브랜드', '최고'],
+            ['라임', '사이다'],
+            ['라임', '노브랜드'],
+            ['라임', '오렌지'],
+            ['라임', '제로'],
+            ['라임', '탄산수'],
+            ['라임', '스파클링'],
+            ['라임', '상큼'],
+            ['라임', '망고'],
+            ['맛', '오렌지'],
+            ['맛', '노브랜드'],
+            ['맛', '제품'],
+            ['맛', '배송'],
+            ['맛', '생각'],
+            ['맛', '상큼'],
+            ['맛', '포도'],
+            ['맛', '재구매'],
+            ['맛', '탄산음료'],
+            ['맛', '청포도'],
+            ['맛', '라임'],
+            ['맛', '칼로리'],
+            ['맛', '가격'],
+            ['맛', '구매'],
+            ['맛', '사이다'],
+            ['맛', '탄산'],
+            ['맛', '탄산수'],
+            ['맛', '망고'],
+            ['맛', '스파클링'],
+            ['맛', '최고'],
+            ['맛', '가성비']
+
+            ]
+          }]
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 1. static 사용 -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reinwasser</title>
+    <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+</head>
+<body>
+	<!-- 4. 사이트 html 하단 figure 태그 -->
+	<figure class="highcharts-figure">
+      <div id="container"></div>
+      <p class="highcharts-description"></p>
+    </figure>
+
+    <!-- 5. <script src="{% static 'chart/js/line.js' %}" ></script> -->
+    <!-- 6. script -->
+
+    <script >
+        var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+                for (let nd_2 in {'가격':1, '재구매':2, '빠르다':3, '박스':4, '포장':5, '맛':6, '라인바싸':7, '제품':8}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#FF6347'
+                };}
+
+                for (let nd_2 in {'가격':1, '가성비':2, '재구매':3, '청':4, '레몬':5, '행사':6, '빠르다':7, '라인바싸':8, '플레인':9
+                , '배송':10, '생수':11, '두번째':12, '자몽':13, '박스':14, '처음':15, '맛':16, '최고':17, '제품':18}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#ADFF2F'
+                };}
+
+                for (let nd_2 in {'재구매':1, '레몬':2, '플레인':3, '자몽':4, '박스':5, '라인바싸':6, '제품':7}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#00FA9A'
+                };}
+
+
+                for (let nd_2 in {'박스':1 , '제품':2 , '재구매':3 }) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : 'pink'
+                };}
+
+                for (let nd_2 in {'탄산':1, '여름':2 }) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    }
+                };}
+
+
+               nodes['라인바싸'] = {
+                id : '라인바싸' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+               nodes['맛'] = {
+                id : '맛' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+
+               nodes['구매'] = {
+                id : '구매' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'orange'
+               } ;
+
+               nodes['배송'] = {
+                id : '배송' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#D8BFD8'
+               } ;
+
+              });
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 80 ,
+            height: 500
+          },
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: true,
+                integration: 'verlet',
+                linkLength: 150
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+            ['가격', '빠르다'],
+            ['가격', '제품'],
+            ['가격', '라인바싸'],
+            ['가격', '박스'],
+            ['가격', '재구매'],
+            ['가격', '맛'],
+            ['가성비', '최고'],
+            ['구매', '플레인'],
+            ['구매', '가성비'],
+            ['구매', '재구매'],
+            ['구매', '생수'],
+            ['구매', '두번째'],
+            ['구매', '자몽'],
+            ['구매', '처음'],
+            ['구매', '최고'],
+            ['구매', '레몬'],
+            ['구매', '박스'],
+            ['구매', '청'],
+            ['구매', '행사'],
+            ['구매', '라인바싸'],
+            ['구매', '빠르다'],
+            ['구매', '가격'],
+            ['구매', '배송'],
+            ['구매', '제품'],
+            ['구매', '맛'],
+            ['레몬', '플레인'],
+            ['레몬', '자몽'],
+            ['맛', '제품'],
+            ['맛', '자몽'],
+            ['맛', '라인바싸'],
+            ['맛', '플레인'],
+            ['맛', '레몬'],
+            ['맛', '박스'],
+            ['맛', '재구매'],
+            ['배송', '박스'],
+            ['배송', '제품'],
+            ['배송', '가격'],
+            ['배송', '포장'],
+            ['배송', '맛'],
+            ['배송', '재구매'],
+            ['배송', '라인바싸'],
+            ['배송', '빠르다'],
+            ['자몽', '플레인'],
+            ['제품', '재구매'],
+            ['탄산', '가격'],
+            ['탄산', '맛'],
+            ['탄산', '배송'],
+            ['탄산', '제품'],
+            ['탄산', '여름']
+            ]
+          }]
+
+        });
+    </script>
+</body>
+</html>

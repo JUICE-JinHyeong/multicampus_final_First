@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 1. static 사용 -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>PepsiColaZ</title>
+    <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+</head>
+<body>
+	<!-- 4. 사이트 html 하단 figure 태그 -->
+	<figure class="highcharts-figure">
+      <div id="container"></div>
+      <p class="highcharts-description"></p>
+    </figure>
+
+    <!-- 5. <script src="{% static 'chart/js/line.js' %}" ></script> -->
+    <!-- 6. script -->
+
+    <script >
+        var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+                for (let nd_2 in {'가격':1, '콜라':2, '탄산':3, '빠르다':4, '쿠폰':5, '제로콜라':6, '음료':7, '박스':8, '포장':9, '맛':10, '라임':11, '캔':12, '할인':13, '제품':14}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#FF6347'
+                };}
+
+                for (let nd_2 in {'도착':1, '가격':2, '마음':3, '구매':4, '콜라':5, '스마일':6, '빠르다':7, '파손':8, '제로콜라':9, '펩시':10, '박스':11
+                , '포장':12, '맛':13, '캔':14, '라임':15, '제품':16}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#ADFF2F'
+                };}
+
+                for (let nd_2 in {'펩시콜라':1, '탄산':2, '음료':3, '캔':4, '슈가':5}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : '#00FA9A'
+                };}
+
+                for (let nd_2 in {'빠르다':1 , '콜라':2 , '가격':3 , '제품':4 , '맛':5 , '제로콜라':6 , '라임':7 , '캔':8 , '박스':9 , '포장':10}) {
+                nodes[nd_2] = {
+                    id : nd_2 ,
+                    marker : {
+                        radius : 20
+                    } ,
+                    color : 'pink'
+                };}
+                nodes['코카콜라'] = {
+                id : '코카콜라' ,
+                marker : {
+                    radius : 20
+                    }
+               };
+
+               nodes['펩시콜라'] = {
+                id : '펩시콜라' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+               nodes['배송'] = {
+                id : '배송' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+
+               nodes['구매'] = {
+                id : '구매' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'orange'
+               } ;
+
+              });
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 80 ,
+            height: 500
+          },
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: true,
+                integration: 'verlet',
+                linkLength: 150
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+            ['가격', '제품'],
+            ['가격', '빠르다'],
+            ['가격', '콜라'],
+            ['구매', '빠르다'],
+            ['구매', '콜라'],
+            ['구매', '할인'],
+            ['구매', '탄산'],
+            ['구매', '가격'],
+            ['구매', '제품'],
+            ['구매', '음료'],
+            ['구매', '맛'],
+            ['구매', '제로콜라'],
+            ['구매', '쿠폰'],
+            ['구매', '라임'],
+            ['구매', '캔'],
+            ['구매', '박스'],
+            ['구매', '포장'],
+            ['라임', '음료'],
+            ['라임', '슈가'],
+            ['라임', '캔'],
+            ['라임', '탄산'],
+            ['라임', '펩시콜라'],
+            ['맛', '가격'],
+            ['맛', '빠르다'],
+            ['맛', '제로콜라'],
+            ['맛', '탄산'],
+            ['맛', '음료'],
+            ['맛', '라임'],
+            ['맛', '코카콜라'],
+            ['맛', '콜라'],
+            ['배송', '도착'],
+            ['배송', '빠르다'],
+            ['배송', '스마일'],
+            ['배송', '구매'],
+            ['배송', '콜라'],
+            ['배송', '빠르다'],
+            ['배송', '박스'],
+            ['배송', '가격'],
+            ['배송', '라임'],
+            ['배송', '캔'],
+            ['배송', '제품'],
+            ['배송', '포장'],
+            ['배송', '마음'],
+            ['배송', '맛'],
+            ['배송', '펩시'],
+            ['배송', '파손'],
+            ['배송', '빠르다'],
+            ['배송', '제로콜라'],
+            ['빠르다', '포장']
+
+            ]
+          }]
+
+        });
+    </script>
+</body>
+</html>
