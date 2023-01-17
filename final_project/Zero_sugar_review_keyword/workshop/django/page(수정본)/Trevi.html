@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 1. static 사용 -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trevi</title>
+    <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+</head>
+<body>
+	<!-- 4. 사이트 html 하단 figure 태그 -->
+	<figure class="highcharts-figure">
+      <div id="container"></div>
+      <p class="highcharts-description"></p>
+    </figure>
+
+    <!-- 5. <script src="{% static 'chart/js/line.js' %}" ></script> -->
+    <!-- 6. script -->
+
+    <script >
+        var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+              <!-- -------------------------------------- -->
+
+               nodes['트레비'] = {
+                id : '트레비' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+<!-- -------------------------------------- -->
+
+                nodes['가격'] = {
+                id : '가격' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+               for (let nd in {'저렴하다' : 1 , '마트':2 , '상태':3 , '매실':4 , '기사':5 , '품질':6 , '양도':7 , '만족':8 , '추천':9}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : 'gold'
+                };}
+
+
+<!-- -------------------------------------- -->
+
+               nodes['배송'] = {
+                id : '배송' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#99f19e'
+               } ;
+
+               for (let nd in {'빠르다' : 1 , '포장' :2 , '도착':3 , '구매':4 , '제품':5 , '라임':6 , '가성비':7 , '애용':8 , '마음':9 , '용량':10 , '매일':11}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#99f19e'
+                };}
+
+            if (link[0] === '포장') {
+              nodes['포장'] = {
+                id: '포장',
+                marker: {
+                  radius: 15
+                },
+                color: '#99f19e'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: '#99f19e'
+              };
+            }
+
+<!-- -------------------------------------- -->
+
+               nodes['맛'] = {
+                id : '맛' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#ef5285'
+               } ;
+               for (let nd in {'입맛':1 }) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#ef5285'
+                };}
+
+            if (link[0] === '레몬') {
+              nodes['레몬'] = {
+                id: '레몬',
+                marker: {
+                  radius: 15
+                },
+                color: '#ef5285'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: '#ef5285'
+              };
+            }
+
+
+<!-- -------------------------------------- -->
+
+               nodes['탄산'] = {
+                id : '탄산' ,
+                marker : {
+                   radius : 30
+                } ,
+                color : '#47b8e0'
+               } ;
+               for (let nd in {'여름':4 , '사이다':1, '콜라':2, '맥주':3 , '칼로리':4 , '에이드':5 , '냉장고':6
+               , '필수':7 , '음료':8 , '사무실':9 , '집':10 , '최고':11 , '양':12 , '물':13 , '과일':14 , '부담없음':15}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#47b8e0'
+                };}
+<!--            if (link[0] === '탄산음료') {-->
+<!--              nodes['탄산음료'] = {-->
+<!--                id: '탄산음료',-->
+<!--                marker: {-->
+<!--                  radius: 15-->
+<!--                },-->
+<!--                color: '#47b8e0'-->
+<!--              };-->
+<!--              nodes[link[1]] = {-->
+<!--                id: link[1],-->
+<!--                marker: {-->
+<!--                  radius: 15-->
+<!--                },-->
+<!--                color: '#47b8e0'-->
+<!--              };-->
+<!--            }-->
+
+<!--            if (nodes[link[0]] && nodes[link[0]].color) {-->
+<!--                nodes[link[1]] = {-->
+<!--                    id: link[1],-->
+<!--                    color: 'silver' ,-->
+<!--                    marker : {-->
+<!--                        radius : 15-->
+<!--                    }-->
+<!--                    };-->
+<!--                    }-->
+
+
+              });
+
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 80 ,
+            height: 1000
+          },
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: true,
+                integration: 'verlet',
+                linkLength: 200
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+            ['트레비' , '맛'],
+            ['트레비' , '배송'],
+            ['트레비' , '가격'],
+            ['트레비' , '탄산'],
+            ['맛', '자몽'],
+ ['맛', '레몬'],
+ ['맛', '빠르다'],
+ ['맛', '포장'],
+ ['맛', '용량'],
+ ['자몽', '에이드'],
+ ['자몽', '플레인'],
+ ['자몽', '양'],
+ ['자몽', '입맛'],
+ ['자몽', '집'],
+ ['레몬', '청'],
+ ['레몬', '자몽'],
+ ['레몬', '플레인'],
+ ['레몬', '품절'],
+ ['레몬', '상큼'],
+ ['빠르다', '포장'],
+ ['빠르다', '재구매'],
+ ['빠르다', '가성비'],
+ ['빠르다', '도착'],
+ ['빠르다', '여름'],
+ ['포장', '박스'],
+ ['포장', '비닐'],
+ ['포장', '유통기한'],
+ ['포장', '재구매'],
+ ['포장', '도착'],
+ ['용량', '마음'],
+ ['용량', '에이드'],
+ ['용량', '부담없음'],
+ ['용량', '레몬'],
+ ['용량', '매일'],
+ ['배송', '빠르다'],
+ ['배송', '구매'],
+ ['배송', '제품'],
+ ['배송', '포장'],
+ ['배송', '저렴하다'],
+ ['빠르다', '포장'],
+ ['빠르다', '재구매'],
+ ['빠르다', '가성비'],
+ ['빠르다', '도착'],
+ ['빠르다', '여름'],
+ ['구매', '제품'],
+ ['구매', '가격'],
+ ['구매', '라임'],
+ ['구매', '맛'],
+ ['구매', '빠르다'],
+ ['제품', '빠르다'],
+ ['제품', '가격'],
+ ['제품', '가성비'],
+ ['제품', '재구매'],
+ ['제품', '애용'],
+ ['포장', '박스'],
+ ['포장', '비닐'],
+ ['포장', '유통기한'],
+ ['포장', '재구매'],
+ ['포장', '도착'],
+ ['저렴하다', '가격'],
+ ['저렴하다', '빠르다'],
+ ['저렴하다', '포장'],
+ ['저렴하다', '재구매'],
+ ['가격', '빠르다'],
+ ['가격', '품질'],
+ ['가격', '마트'],
+ ['가격', '재구매'],
+ ['가격', '포장'],
+ ['빠르다', '포장'],
+ ['빠르다', '재구매'],
+ ['빠르다', '가성비'],
+ ['빠르다', '도착'],
+ ['빠르다', '여름'],
+ ['품질', '양도'],
+ ['품질', '추천'],
+ ['품질', '마음'],
+ ['품질', '애용'],
+ ['품질', '만족'],
+ ['마트', '상태'],
+ ['마트', '기사'],
+ ['마트', '입맛'],
+ ['마트', '매실'],
+ ['마트', '매일'],
+ ['재구매', '가성비'],
+ ['재구매', '음료'],
+ ['재구매', '용량'],
+ ['재구매', '마음'],
+ ['포장', '박스'],
+ ['포장', '비닐'],
+ ['포장', '유통기한'],
+ ['포장', '재구매'],
+ ['포장', '도착'],
+ ['탄산', '음료'],
+ ['탄산', '여름'],
+ ['탄산', '콜라'],
+ ['탄산', '양'],
+ ['음료', '집'],
+ ['음료', '최고'],
+ ['음료', '사무실'],
+ ['음료', '필수'],
+ ['음료', '청'],
+ ['여름', '필수'],
+ ['여름', '음료'],
+ ['여름', '청'],
+ ['여름', '에이드'],
+ ['여름', '냉장고'],
+ ['콜라', '사이다'],
+ ['콜라', '부담없음'],
+ ['콜라', '맥주'],
+ ['콜라', '집'],
+ ['콜라', '칼로리'],
+ ['양', '플레인'],
+ ['양', '부담없음'],
+ ['양', '추천'],
+ ['양', '물'],
+ ['양', '과일']
+
+            ]
+          }]
+        });
+    </script>
+</body>
+</html>

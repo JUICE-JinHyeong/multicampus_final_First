@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 1. static 사용 -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Victoria</title>
+    <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+    <!-- 3. css 속성 가져오기 -->
+    <link rel="stylesheet" href="{% static 'chart/css/line.css' %}">
+
+</head>
+<body>
+	<!-- 4. 사이트 html 하단 figure 태그 -->
+	<figure class="highcharts-figure">
+      <div id="container"></div>
+      <p class="highcharts-description"></p>
+    </figure>
+
+    <!-- 5. <script src="{% static 'chart/js/line.js' %}" ></script> -->
+    <!-- 6. script -->
+
+    <script >
+        var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+
+<!-- -------------------------------------- -->
+
+               nodes['빅토리아'] = {
+                id : '빅토리아' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+<!-- -------------------------------------- -->
+
+                nodes['가격'] = {
+                id : '가격' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+               for (let nd in {'저렴하다' : 1}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : 'gold'
+                };}
+
+<!-- -------------------------------------- -->
+
+               nodes['배송'] = {
+                id : '배송' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#99f19e'
+               } ;
+
+               for (let nd in {'박스':1 , '빠르다' : 2 , '제품' : 3 , '마음' :4 }) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#99f19e'
+                };}
+
+            if (link[0] === '포장') {
+              nodes['포장'] = {
+                id: '포장',
+                marker: {
+                  radius: 15
+                },
+                color: '#99f19e'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: '#99f19e'
+              };
+            }
+
+<!-- -------------------------------------- -->
+
+               nodes['맛'] = {
+                id : '맛' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#ef5285'
+               } ;
+               for (let nd in {'청포도':1 , '재구매':2 , '음료':3 , '구매':4}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#ef5285'
+                };}
+
+            if (link[0] === '파인애플') {
+              nodes['파인애플'] = {
+                id: '파인애플',
+                marker: {
+                  radius: 15
+                },
+                color: '#ef5285'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: '#ef5285'
+              };
+            }
+
+<!-- -------------------------------------- -->
+
+               nodes['탄산'] = {
+                id : '탄산' ,
+                marker : {
+                   radius : 30
+                } ,
+                color : '#47b8e0'
+               } ;
+               for (let nd in {'최고':1 , '추천':2 , '가성비':3}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#47b8e0'
+                };}
+            if (link[0] === '탄산음료') {
+              nodes['탄산음료'] = {
+                id: '탄산음료',
+                marker: {
+                  radius: 15
+                },
+                color: '#47b8e0'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: '#47b8e0'
+              };
+            }
+
+<!--            if (nodes[link[0]] && nodes[link[0]].color) {-->
+<!--                nodes[link[1]] = {-->
+<!--                    id: link[1],-->
+<!--                    color: 'silver' ,-->
+<!--                    marker : {-->
+<!--                        radius : 15-->
+<!--                    }-->
+<!--                    };-->
+<!--                    }-->
+
+
+
+
+              });
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 80 ,
+            height: 1000
+          },
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: true,
+                integration: 'verlet',
+                linkLength: 200
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+                  ['빅토리아' , '맛'],
+            ['빅토리아' , '배송'],
+            ['빅토리아' , '가격'],
+            ['빅토리아' , '탄산'],
+            ['맛', '구매'],
+ ['맛', '청포도'],
+ ['맛', '파인애플'],
+ ['맛', '제품'],
+ ['맛', '재구매'],
+ ['구매', '탄산'],
+ ['구매', '배송'],
+ ['구매', '제품'],
+ ['구매', '청포도'],
+ ['구매', '가격'],
+ ['청포도', '파인애플'],
+ ['청포도', '복숭아'],
+ ['청포도', '자몽'],
+ ['청포도', '레몬'],
+ ['청포도', '처음'],
+ ['파인애플', '복숭아'],
+ ['파인애플', '자몽'],
+ ['파인애플', '배'],
+ ['파인애플', '레몬'],
+ ['파인애플', '처음'],
+ ['제품', '빠르다'],
+ ['제품', '가격'],
+ ['제품', '재구매'],
+ ['제품', '가성비'],
+ ['제품', '박스'],
+ ['재구매', '청포도'],
+ ['재구매', '빠르다'],
+ ['재구매', '가성비'],
+ ['재구매', '파인애플'],
+ ['재구매', '음료'],
+ ['배송', '빠르다'],
+ ['배송', '제품'],
+ ['배송', '박스'],
+ ['배송', '포장'],
+ ['배송', '재구매'],
+ ['빠르다', '포장'],
+ ['빠르다', '저렴하다'],
+ ['빠르다', '가성비'],
+ ['빠르다', '청포도'],
+ ['빠르다', '마음'],
+ ['제품', '빠르다'],
+ ['제품', '가격'],
+ ['제품', '재구매'],
+ ['제품', '가성비'],
+ ['제품', '박스'],
+ ['박스', '포장'],
+ ['박스', '택배'],
+ ['박스', '파인애플'],
+ ['박스', '레몬'],
+ ['박스', '처음'],
+ ['포장', '라임'],
+ ['포장', '도착'],
+ ['포장', '택배'],
+ ['포장', '유통기한'],
+ ['재구매', '청포도'],
+ ['재구매', '빠르다'],
+ ['재구매', '가성비'],
+ ['재구매', '파인애플'],
+ ['재구매', '음료'],
+ ['가격', '저렴하다'],
+ ['가격', '재구매'],
+ ['가격', '빠르다'],
+ ['가격', '최고'],
+ ['가격', '청포도'],
+ ['저렴하다', '청포도'],
+ ['저렴하다', '박스'],
+ ['저렴하다', '음료'],
+ ['저렴하다', '최고'],
+ ['재구매', '청포도'],
+ ['재구매', '빠르다'],
+ ['재구매', '가성비'],
+ ['재구매', '파인애플'],
+ ['재구매', '음료'],
+ ['빠르다', '포장'],
+ ['빠르다', '저렴하다'],
+ ['빠르다', '가성비'],
+ ['빠르다', '청포도'],
+ ['빠르다', '마음'],
+ ['최고', '가성비'],
+ ['최고', '파인애플'],
+ ['최고', '추천'],
+ ['최고', '자몽'],
+ ['최고', '음료'],
+ ['청포도', '파인애플'],
+ ['청포도', '복숭아'],
+ ['청포도', '자몽'],
+ ['청포도', '레몬'],
+ ['청포도', '처음'],
+ ['탄산', '제품'],
+ ['탄산', '청포도'],
+ ['탄산', '최고'],
+ ['탄산', '재구매'],
+ ['탄산', '탄산음료'],
+ ['제품', '빠르다'],
+ ['제품', '가격'],
+ ['제품', '재구매'],
+ ['제품', '가성비'],
+ ['제품', '박스'],
+ ['청포도', '파인애플'],
+ ['청포도', '복숭아'],
+ ['청포도', '자몽'],
+ ['청포도', '레몬'],
+ ['청포도', '처음'],
+ ['최고', '가성비'],
+ ['최고', '파인애플'],
+ ['최고', '추천'],
+ ['최고', '자몽'],
+ ['최고', '음료'],
+ ['재구매', '청포도'],
+ ['재구매', '빠르다'],
+ ['재구매', '가성비'],
+ ['재구매', '파인애플'],
+ ['재구매', '음료'],
+ ['탄산음료', '콜라'],
+ ['탄산음료', '사이다'],
+ ['탄산음료', '플레인'],
+ ['탄산음료', '물'],
+ ['탄산음료', '느낌']
+            ]
+          }]
+        });
+    </script>
+</body>
+</html>

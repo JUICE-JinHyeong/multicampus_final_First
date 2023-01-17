@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 1. static 사용 -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>NarangdCider</title>
+    <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+</head>
+<body>
+	<!-- 4. 사이트 html 하단 figure 태그 -->
+	<figure class="highcharts-figure">
+      <div id="container"></div>
+      <p class="highcharts-description"></p>
+    </figure>
+
+    <!-- 5. <script src="{% static 'chart/js/line.js' %}" ></script> -->
+    <!-- 6. script -->
+
+    <script >
+        var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+<!-- -------------------------------------- -->
+
+               nodes['나랑드사이다'] = {
+                id : '나랑드사이다' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+<!-- -------------------------------------- -->
+
+                nodes['가격'] = {
+                id : '가격' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+               for (let nd in {'작성':2 , '상태':3}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : 'gold'
+                };}
+
+<!-- -------------------------------------- -->
+
+               nodes['배송'] = {
+                id : '배송' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#99f19e'
+               } ;
+
+               for (let nd in {'빠르다':1 , '재구매':2 , '포장':3 , '재구매':4 , '기간':5 , '사용':6 , '유효':7 , '크기':8 , '단골':9 , '도움':10 , '의향':11}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#99f19e'
+                };}
+
+            if (link[0] === '구매') {
+              nodes['구매'] = {
+                id: '구매',
+                marker: {
+                  radius: 15
+                },
+                color: '#99f19e'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: '#99f19e'
+              };
+            }
+
+<!-- -------------------------------------- -->
+
+               nodes['맛'] = {
+                id : '맛' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#ef5285'
+               } ;
+               for (let nd in {'제로':1 , '부담없음':2 , '콜라':3 , '쿠폰':4 , '설탕':5 , '집':6 , '최고':7 , '아들':8}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#ef5285'
+                };}
+
+            if (link[0] === '칼로리') {
+              nodes['칼로리'] = {
+                id: '칼로리',
+                marker: {
+                  radius: 15
+                },
+                color: '#ef5285'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: '#ef5285'
+              };
+            }
+
+<!-- -------------------------------------- -->
+
+               nodes['탄산'] = {
+                id : '탄산' ,
+                marker : {
+                   radius : 30
+                } ,
+                color : '#47b8e0'
+               } ;
+               for (let nd in {'캔':1 , '박스':2 , '택배':3 , '처음':4 , '하루':5 , '다이어트':6 , '필수':7}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#47b8e0'
+                };}
+            if (link[0] === '단맛') {
+              nodes['단맛'] = {
+                id: '단맛',
+                marker: {
+                  radius: 15
+                },
+                color: '#47b8e0'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: '#47b8e0'
+              };
+            }
+
+<!--            if (nodes[link[0]] && nodes[link[0]].color) {-->
+<!--                nodes[link[1]] = {-->
+<!--                    id: link[1],-->
+<!--                    color: 'silver' ,-->
+<!--                    marker : {-->
+<!--                        radius : 15-->
+<!--                    }-->
+<!--                    };-->
+<!--                    }-->
+
+
+              });
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 80 ,
+            height: 1000
+          },
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: true,
+                integration: 'verlet',
+                linkLength: 200
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+            ['나랑드사이다' , '맛'],
+            ['나랑드사이다' , '배송'],
+            ['나랑드사이다' , '가격'],
+            ['나랑드사이다' , '탄산'],
+            ['맛', '칼로리'],
+ ['맛', '제로'],
+ ['맛', '포장'],
+ ['맛', '재구매'],
+ ['맛', '사용'],
+ ['칼로리', '부담없음'],
+ ['칼로리', '탄산'],
+ ['칼로리', '걱정'],
+ ['칼로리', '음료'],
+ ['칼로리', '탄산음료'],
+ ['제로', '칼로리'],
+ ['제로', '탄산'],
+ ['제로', '부담없음'],
+ ['제로', '음료'],
+ ['제로', '가격'],
+ ['포장', '기간'],
+ ['포장', '사용'],
+ ['포장', '유효'],
+ ['포장', '도움'],
+ ['포장', '크기'],
+ ['재구매', '포장'],
+ ['재구매', '기간'],
+ ['재구매', '의향'],
+ ['재구매', '사용'],
+ ['재구매', '크기'],
+ ['사용', '도움'],
+ ['사용', '작성'],
+ ['사용', '기간'],
+ ['사용', '크기'],
+ ['사용', '유효'],
+ ['배송', '빠르다'],
+ ['배송', '구매'],
+ ['배송', '제품'],
+ ['배송', '포장'],
+ ['빠르다', '가격'],
+ ['빠르다', '제품'],
+ ['빠르다', '포장'],
+ ['빠르다', '칼로리'],
+ ['빠르다', '탄산'],
+ ['구매', '가격'],
+ ['구매', '맛'],
+ ['구매', '사이다'],
+ ['구매', '제품'],
+ ['제품', '사용'],
+ ['제품', '재구매'],
+ ['제품', '포장'],
+ ['제품', '작성'],
+ ['제품', '탄산'],
+ ['포장', '기간'],
+ ['포장', '사용'],
+ ['포장', '유효'],
+ ['포장', '도움'],
+ ['포장', '크기'],
+ ['가격', '제품'],
+ ['가격', '칼로리'],
+ ['가격', '사용'],
+ ['가격', '도움'],
+ ['가격', '작성'],
+ ['제품', '사용'],
+ ['제품', '재구매'],
+ ['제품', '포장'],
+ ['제품', '작성'],
+ ['제품', '탄산'],
+ ['칼로리', '부담없음'],
+ ['칼로리', '탄산'],
+ ['칼로리', '걱정'],
+ ['칼로리', '음료'],
+ ['칼로리', '탄산음료'],
+ ['사용', '도움'],
+ ['사용', '작성'],
+ ['사용', '기간'],
+ ['사용', '크기'],
+ ['사용', '유효'],
+ ['도움', '작성'],
+ ['도움', '유효'],
+ ['도움', '크기'],
+ ['도움', '의향'],
+ ['도움', '단골'],
+ ['작성', '크기'],
+ ['작성', '유효'],
+ ['작성', '의향'],
+ ['작성', '단골'],
+ ['작성', '상태'],
+ ['탄산', '다이어트'],
+ ['탄산', '음료'],
+ ['탄산', '캔'],
+ ['탄산', '부담없음'],
+ ['탄산', '단맛'],
+ ['다이어트', '탄산음료'],
+ ['다이어트', '최고'],
+ ['다이어트', '필수'],
+ ['다이어트', '도움'],
+ ['다이어트', '아들'],
+ ['음료', '다이어트'],
+ ['음료', '캔'],
+ ['음료', '최고'],
+ ['음료', '집'],
+ ['음료', '아들'],
+ ['캔', '박스'],
+ ['캔', '하루'],
+ ['캔', '부담없음'],
+ ['캔', '처음'],
+ ['캔', '택배'],
+ ['부담없음', '설탕'],
+ ['부담없음', '탄산음료'],
+ ['부담없음', '콜라'],
+ ['부담없음', '쿠폰'],
+ ['부담없음', '박스'],
+ ['단맛', '청량감'],
+ ['단맛', '중독'],
+ ['단맛', '당'],
+ ['단맛', '파손'],
+ ['단맛', '마트']
+            ]
+          }]
+        });
+    </script>
+</body>
+</html>
