@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 1. static 사용 -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>ChillsungCiderZ</title>
+    <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+</head>
+<body>
+	<!-- 4. 사이트 html 하단 figure 태그 -->
+	<figure class="highcharts-figure">
+      <div id="container" style="width : 1500px; height: 1000px; margin: 0 auto"></div>
+      <p class="highcharts-description"></p>
+    </figure>
+
+    <!-- 5. <script src="{% static 'chart/js/line.js' %}" ></script> -->
+    <!-- 6. script -->
+
+    <script >
+        var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+
+<!-- -------------------------------------- -->
+
+               nodes['칠성사이다'] = {
+                id : '칠성사이다' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+<!-- -------------------------------------- -->
+
+                nodes['가격'] = {
+                id : '가격' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+<!--               for (let nd in {'저렴하다' : 1}) {-->
+<!--                nodes[nd] = {-->
+<!--                    id : nd ,-->
+<!--                    marker : {-->
+<!--                        radius : 15-->
+<!--                    } ,-->
+<!--                    color : 'gold'-->
+<!--                };}-->
+            if (link[0] === '쿠폰') {
+              nodes['쿠폰'] = {
+                id: '쿠폰',
+                marker: {
+                  radius: 15
+                },
+                color: 'gold'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: 'gold'
+              };
+            }
+<!-- -------------------------------------- -->
+
+               nodes['배송'] = {
+                id : '배송' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#99f19e'
+               } ;
+
+               for (let nd in {'캔':1 , '마음':2 , '냉장고':3 , '집':4 , '가성비':5 , '재구매':6 , '만족':7 , '예정':8}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#99f19e'
+                };}
+
+            if (link[0] === '배송') {
+              nodes['배송'] = {
+                id: '배송',
+                marker: {
+                  radius: 15
+                },
+                color: '#99f19e'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: '#99f19e'
+              };
+            }
+            if (link[0] === '박스') {
+              nodes['박스'] = {
+                id: '박스',
+                marker: {
+                  radius: 15
+                },
+                color: '#99f19e'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: '#99f19e'
+              };
+            }
+
+<!-- -------------------------------------- -->
+
+               nodes['맛'] = {
+                id : '맛' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#ef5285'
+               } ;
+               for (let nd in {'차이':1 , '생각':2 , '설탕':3 , '오리지널':4 ,'기존':5 , '음료':6 , '최고':7 , '다이어트':8 , '탄산음료':9
+               , '칼로리':10 , '걱정':11 , '부담없음':12}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#ef5285'
+                };}
+
+<!--            if (link[0] === '파인애플') {-->
+<!--              nodes['파인애플'] = {-->
+<!--                id: '파인애플',-->
+<!--                marker: {-->
+<!--                  radius: 15-->
+<!--                },-->
+<!--                color: '#ef5285'-->
+<!--              };-->
+<!--              nodes[link[1]] = {-->
+<!--                id: link[1],-->
+<!--                marker: {-->
+<!--                  radius: 15-->
+<!--                },-->
+<!--                color: '#ef5285'-->
+<!--              };-->
+<!--            }-->
+
+<!-- -------------------------------------- -->
+
+               nodes['탄산'] = {
+                id : '탄산' ,
+                marker : {
+                   radius : 30
+                } ,
+                color : '#47b8e0'
+               } ;
+               for (let nd in {'콜라':1 , '제로콜라':2 , '펩시':3 , '청량감':4}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#47b8e0'
+                };}
+<!--            if (link[0] === '탄산음료') {-->
+<!--              nodes['탄산음료'] = {-->
+<!--                id: '탄산음료',-->
+<!--                marker: {-->
+<!--                  radius: 15-->
+<!--                },-->
+<!--                color: '#47b8e0'-->
+<!--              };-->
+<!--              nodes[link[1]] = {-->
+<!--                id: link[1],-->
+<!--                marker: {-->
+<!--                  radius: 15-->
+<!--                },-->
+<!--                color: '#47b8e0'-->
+<!--              };-->
+<!--            }-->
+
+<!--            if (nodes[link[0]] && nodes[link[0]].color) {-->
+<!--                nodes[link[1]] = {-->
+<!--                    id: link[1],-->
+<!--                    color: 'silver' ,-->
+<!--                    marker : {-->
+<!--                        radius : 15-->
+<!--                    }-->
+<!--                    };-->
+<!--                    }-->
+
+
+              });
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 80 ,
+            height: 1000
+          },
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: true,
+                integration: 'verlet',
+                linkLength: 200
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+            ['칠성사이다' , '맛'],
+            ['칠성사이다' , '배송'],
+            ['칠성사이다' , '가격'],
+            ['칠성사이다' , '탄산'],
+['맛', '칼로리'],
+ ['맛', '차이'],
+ ['맛', '포장'],
+ ['맛', '빠르다'],
+ ['맛', '음료'],
+ ['칼로리', '부담없음'],
+ ['칼로리', '걱정'],
+ ['칼로리', '음료'],
+ ['칼로리', '최고'],
+ ['칼로리', '재구매'],
+ ['차이', '기존'],
+ ['차이', '콜라'],
+ ['차이', '생각'],
+ ['차이', '오리지널'],
+ ['차이', '설탕'],
+ ['포장', '박스'],
+ ['포장', '캔'],
+ ['포장', '음료'],
+ ['포장', '재구매'],
+ ['포장', '탄산'],
+ ['빠르다', '제품'],
+ ['빠르다', '포장'],
+ ['빠르다', '가격'],
+ ['빠르다', '도착'],
+ ['빠르다', '마음'],
+ ['음료', '최고'],
+ ['음료', '박스'],
+ ['음료', '걱정'],
+ ['음료', '재구매'],
+ ['음료', '차이'],
+ ['배송', '빠르다'],
+ ['배송', '제품'],
+ ['배송', '구매'],
+ ['배송', '포장'],
+ ['배송', '박스'],
+ ['빠르다', '제품'],
+ ['빠르다', '포장'],
+ ['빠르다', '가격'],
+ ['빠르다', '도착'],
+ ['빠르다', '마음'],
+ ['제품', '가격'],
+ ['제품', '포장'],
+ ['제품', '마음'],
+ ['제품', '재구매'],
+ ['제품', '가성비'],
+ ['구매', '가격'],
+ ['구매', '맛'],
+ ['구매', '제품'],
+ ['구매', '빠르다'],
+ ['구매', '포장'],
+ ['포장', '박스'],
+ ['포장', '캔'],
+ ['포장', '음료'],
+ ['포장', '재구매'],
+ ['포장', '탄산'],
+ ['박스', '캔'],
+ ['박스', '도착'],
+ ['박스', '할인'],
+ ['박스', '택배'],
+ ['박스', '처음'],
+ ['가격', '포장'],
+ ['가격', '재구매'],
+ ['가격', '음료'],
+ ['가격', '쿠폰'],
+ ['가격', '마음'],
+ ['포장', '박스'],
+ ['포장', '캔'],
+ ['포장', '음료'],
+ ['포장', '재구매'],
+ ['포장', '탄산'],
+ ['재구매', '예정'],
+ ['재구매', '만족'],
+ ['재구매', '부담없음'],
+ ['재구매', '차이'],
+ ['재구매', '콜라'],
+ ['음료', '최고'],
+ ['음료', '박스'],
+ ['음료', '걱정'],
+ ['음료', '재구매'],
+ ['음료', '차이'],
+ ['쿠폰', '사용'],
+ ['쿠폰', '유통기한'],
+ ['쿠폰', '스마일'],
+ ['쿠폰', '단맛'],
+ ['쿠폰', '방송'],
+ ['마음', '냉장고'],
+ ['마음', '걱정'],
+ ['마음', '콜라'],
+ ['마음', '집'],
+ ['마음', '생각'],
+ ['탄산', '칼로리'],
+ ['탄산', '음료'],
+ ['탄산', '최고'],
+ ['탄산', '차이'],
+ ['탄산', '콜라'],
+ ['칼로리', '부담없음'],
+ ['칼로리', '걱정'],
+ ['칼로리', '음료'],
+ ['칼로리', '최고'],
+ ['칼로리', '재구매'],
+ ['음료', '최고'],
+ ['음료', '박스'],
+ ['음료', '걱정'],
+ ['음료', '재구매'],
+ ['음료', '차이'],
+ ['최고', '탄산음료'],
+ ['최고', '가성비'],
+ ['최고', '다이어트'],
+ ['최고', '제로콜라'],
+ ['최고', '걱정'],
+ ['차이', '기존'],
+ ['차이', '콜라'],
+ ['차이', '생각'],
+ ['차이', '오리지널'],
+ ['차이', '설탕'],
+ ['콜라', '제로콜라'],
+ ['콜라', '펩시'],
+ ['콜라', '걱정'],
+ ['콜라', '청량감']
+            ]
+          }]
+        });
+    </script>
+</body>
+</html>
