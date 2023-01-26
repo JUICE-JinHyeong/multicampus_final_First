@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+{% load static %}
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html class="no-js">
+    <head>
+        <meta charset="UTF-8">
+        <title>Zero Sugar Drinks</title>
+        <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" href="favicon.ico">
+        <title>Timer Agency Template</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="{% static 'plugins/ionicons/ionicons.min.css' %}">
+        <!-- animate css -->
+        <link rel="stylesheet" href="{% static 'plugins/animate-css/animate.css' %}">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" href="{% static 'plugins/slider/slider.css' %}">
+        <!-- slick slider -->
+        <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+        <!-- Fancybox -->
+        <link rel="stylesheet" href="{% static 'plugins/facncybox/jquery.fancybox.css' %}">
+        <!-- hover -->
+        <link rel="stylesheet" href="{% static 'plugins/hover/hover-min.css' %}">
+        <!-- template main css file -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <!-- push button css file -->
+        <link rel="stylesheet" href="{% static 'buttoncss/btn_push.css' %}">
+    </head>
+    <body> <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+<section class="top-bar animated-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="../index">
+                        <img src="{% static 'images/healthypleasure.png' %}" height="80" alt="logo">
+                    </a>
+                    <button class="d-none navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="d-none navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="service.html">Service</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Pages
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="404.html">404 Page</a>
+                                    <a class="dropdown-item" href="gallery.html">Gallery</a>
+                                    <a class="dropdown-item" href="single-post.html">Single Post</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Blog
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="blog-fullwidth.html">Blog Full</a>
+                                    <a class="dropdown-item" href="blog-left-sidebar.html">Blog Left sidebar</a>
+                                    <a class="dropdown-item" href="blog-right-sidebar.html">Blog Right sidebar</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!--
+==================================================
+Global Page Section Start
+================================================== -->
+<section class="global-page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <div class="d-none portfolio-meta">
+            <span>Jan 13, 2022</span>|
+            <span> Category: Drinks</span>|
+            <span> website:
+              <a href="http://www.themefisher.com">Themefisher</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/#Page header-->
+
+<!-- work details part start -->
+<section class="work-single" style="padding :0px;">
+    <div class="container">
+   <div style="width:1100px; height:700px; border:0px solid green; float:center;">
+
+       <div style = "float : right">
+           <script language="javascript">function showPopup() { window.open("../oneam/grap", "원에이엠 스파클링", "width=800, height=720, left=100, top=50"); }</script>
+           <a href="" class="button btnPush btnBlueGreen" onclick="showPopup();">더보기</a>
+       </div>
+                    <figure class = "hightcharts-figure">
+<!--                        (1100px - 850px) / 2 -->
+                        <div id="container" style="width : 80%; height: 650px; margin-left : 125px;"></div>
+                        <p class ="highcharts-dscription">
+                        </p>
+                    </figure>
+                      <script >
+            var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+<!-- -------------------------------------- -->
+
+               nodes['원에이엠'] = {
+                id : '원에이엠' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+<!-- -------------------------------------- -->
+
+                nodes['가격'] = {
+                id : '가격' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+               for (let nd in {'저렴하다' : 1 , '구매예정':3 , '하루':4}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : 'gold'
+                };}
+
+<!-- -------------------------------------- -->
+
+               nodes['배송'] = {
+                id : '배송' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#99f19e'
+               } ;
+
+               for (let nd in {'포장':1 , '빠르다' : 2 , '제품':7, '최고':8}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#99f19e'
+                };}
+
+            if (link[0] === '박스') {
+              nodes['박스'] = {
+                id: '박스',
+                marker: {
+                  radius: 15
+                },
+                color: '#99f19e'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: '#99f19e'
+              };
+            }
+
+<!-- -------------------------------------- -->
+
+               nodes['맛'] = {
+                id : '맛' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#ef5285'
+               } ;
+               for (let nd in {'라임':1 , '파인애플':2 , '베리':3 , '애플':4 , '구매':5 , '탄산수':6 }) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#ef5285'
+                };}
+
+<!--            if (link[0] === '파인애플') {-->
+<!--              nodes['파인애플'] = {-->
+<!--                id: '파인애플',-->
+<!--                marker: {-->
+<!--                  radius: 15-->
+<!--                },-->
+<!--                color: '#ef5285'-->
+<!--              };-->
+<!--              nodes[link[1]] = {-->
+<!--                id: link[1],-->
+<!--                marker: {-->
+<!--                  radius: 15-->
+<!--                },-->
+<!--                color: '#ef5285'-->
+<!--              };-->
+<!--            }-->
+
+<!-- -------------------------------------- -->
+
+               nodes['탄산'] = {
+                id : '탄산' ,
+                marker : {
+                   radius : 30
+                } ,
+                color : '#47b8e0'
+               } ;
+               for (let nd in {'제로':1 , '칼로리':2 , '사이다':4 , '다이어트':6 , '탄산음료':7
+               , '부담없음':13 , '당':15 }) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#47b8e0'
+                };}
+<!--            if (link[0] === '탄산음료') {-->
+<!--              nodes['탄산음료'] = {-->
+<!--                id: '탄산음료',-->
+<!--                marker: {-->
+<!--                  radius: 15-->
+<!--                },-->
+<!--                color: '#47b8e0'-->
+<!--              };-->
+<!--              nodes[link[1]] = {-->
+<!--                id: link[1],-->
+<!--                marker: {-->
+<!--                  radius: 15-->
+<!--                },-->
+<!--                color: '#47b8e0'-->
+<!--              };-->
+<!--            }-->
+
+<!--            if (nodes[link[0]] && nodes[link[0]].color) {-->
+<!--                nodes[link[1]] = {-->
+<!--                    id: link[1],-->
+<!--                    color: 'silver' ,-->
+<!--                    marker : {-->
+<!--                        radius : 15-->
+<!--                    }-->
+<!--                    };-->
+<!--                    }-->
+
+
+              });
+
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 50 ,
+            height: 650
+          },
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: false,
+                integration: 'verlet',
+                linkLength: 150
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+            ['원에이엠' , '맛'],
+            ['원에이엠' , '배송'],
+            ['원에이엠' , '가격'],
+            ['원에이엠' , '탄산'],
+ ['맛', '구매'], ['맛', '애플'], ['맛', '칼로리'], ['구매', '탄산수'], ['구매', '애플'], ['구매', '칼로리'], ['애플', '라임'], ['애플', '파인애플'], ['애플', '베리'], ['칼로리', '제로'], ['칼로리', '탄산'], ['배송', '빠르다'], ['배송', '제품'], ['배송', '포장'], ['빠르다', '포장'], ['빠르다', '가격'], ['제품', '포장'], ['제품', '빠르다'], ['제품', '최고'], ['포장', '박스'], ['가격', '부담없음'], ['가격', '저렴하다'], ['가격', '박스'], ['부담없음', '사이다'], ['부담없음', '당'], ['저렴하다', '하루'], ['저렴하다', '구매예정'], ['박스', '캔'], ['탄산', '다이어트'], ['탄산', '제로'], ['다이어트', '탄산음료'], ['다이어트', '제로'], ['제로', '사이다'], ['제로', '탄산음료'], ['제로', '부담없음']]
+
+          }]
+        });
+        </script>
+            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="work-single-image">
+            <div style="clear:both:">
+
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8">
+        <!-- work single Content -->
+        <div class="work-single-content">
+          <h3>원에이엠 스파클링</h3>
+          <p>내 몸에 부담이 되는 건 쏙-뺀 내 몸을 위한 건강한 탄산</p>
+          <p>열량 0kcal, 지방 0g, 단백질 0g, 탄수화물(당류) 1g, 나트륨 15mg(350ml)</p>
+            <br>
+             <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="img-wrapper">
+                                <p style="text-align: center;">
+                                    <img src="{% static 'images/portfolio/oneam/oneam210.jpg' %}" height="170" alt="portfolio items">
+                                <p style="text-align: center;">원에이엠 스파클링 210ml</p>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="img-wrapper">
+                                <p style="text-align: center;">
+                                     <img src="{% static 'images/portfolio/oneam/oneam355.jpg' %}" height="170" alt="portfolio items">
+                                <p style="text-align: center;">원에이엠 스파클링 355ml</p>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="img-wrapper">
+                                <p style="text-align: center;">
+                                    <img src="{% static 'images/portfolio/oneam/oneamP350.jpg' %}" height="170" alt="portfolio items">
+                                <p style="text-align: center;">원에이엠 스파클링 350ml</p>
+                                </p>
+                            </div>
+                         </div>
+                    </div>
+              </div>
+          <!-- Blockquote -->
+<!--          <blockquote>-->
+<!--              <p></p>-->
+<!--          </blockquote>-->
+<!--          <p>3번째 설명</p>-->
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <!-- sidebar -->
+        <div class="work-single-sidebar">
+          <h5>제조사</h5>
+          <h6><a href = "https://1am-diet.com/index.html" target="_blank">푸드나무</a></h6>
+          <h5>감미료</h5>
+          <h6>
+              <span title="설탕보다 600배 강한 단맛을 가진 무열량 감미료이다.."><a href = "https://ko.wikipedia.org/wiki/수크랄로스" target="_blank">수크랄로스</a></span>
+          </h6>
+<!--          <h5>원산지</h5>-->
+<!--          <h6>미국</h6>-->
+<!--          <h5>출시 연도</h5>-->
+<!--          <h6>2005년</h6>-->
+          <div class="row">
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <a class="d-none btn btn-dafault btn-work hvr-bounce-to-right" href="#">페이지 탑 버튼</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- work details part end -->
+
+<section class="works works-fit">
+  <div class="container">
+    <h2 class="subtitle">다른 제품들</h2>
+    <p class="d-none subtitle-des">
+      관련 음료 추천 문장1
+      <br> 관련 음료 추천 문장 2.
+    </p>
+    <div class="row">
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="300ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="{% static 'images/portfolio/welchs.jpg' %}" class="img-fluid" alt="">
+            <div class="overlay">
+              <div class="buttons">
+                <a target="_blank" href="../welchs/">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4 style="text-align: center;">
+              <a href="../welchs/">
+                웰치스 제로
+              </a>
+            </h4>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="300ms" data-wow-delay="0ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="{% static 'images/portfolio/victoria.jpg' %}" class="img-fluid" alt="portfolio items">
+            <div class="overlay">
+              <div class="buttons">
+                <a target="_blank" href="../victoria/">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4 style="text-align: center;">
+              <a href="../victoria/">
+                빅토리아 탄산수
+              </a>
+            </h4>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="300ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="{% static 'images/portfolio/minemine.jpg' %}" class="img-fluid" alt="portfolio items">
+            <div class="overlay">
+              <div class="buttons">
+                <a target="_blank" href="../minemine/">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4 style="text-align: center;">
+              <a href="../minemine/">
+                미네마인 스파클링
+              </a>
+            </h4>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="600ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 600ms; -webkit-animation-delay: 600ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="{% static 'images/portfolio/trevi.jpg' %}" class="img-fluid" alt="">
+            <div class="overlay">
+              <div class="buttons">
+                <a target="_blank" href="../trevi/">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4 style="text-align: center;">
+              <a href="../trevi/">
+                트레비
+              </a>
+            </h4>
+          </figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+            <!--
+            ==================================================
+            Call To Action Section Start
+            ================================================== -->
+            <section id="d-none call-to-action">
+                <div class="d-none container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="block">
+                                <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">하위 섹션 제목</h1>
+                                <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">하위세션 문장1<br>하위세션 문장2.</p>
+                                <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">/contact페이지 가는 버튼</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>;
+            <!--
+            ==================================================
+            Footer Section Start
+            ================================================== -->
+            <footer id="d-none footer">
+                <div class="container">
+                    <div class="row content-justify-between">
+                        <div class="col-md-8 col-12 text-center text-lg-left text-md-left">
+                            <p class="d-none copyright">Copyright: Design and Developed by <a href="http://www.Themefisher.com" target="_blank">multi team 1</a>. <br>
+                                Get More information From Our
+                                <a href="https://themefisher.com/free-bootstrap-templates/" target="_blank">page</a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <!-- Social Media -->
+                            <ul class="d-none social text-center text-md-right text-lg-right">
+                                <li>
+                                    <a href="http://wwww.fb.com/themefisher" class="Facebook">
+                                        <i class="ion-social-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://wwww.twitter.com/themefisher" class="Twitter">
+                                        <i class="ion-social-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="Linkedin">
+                                        <i class="ion-social-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://wwww.fb.com/themefisher" class="Google Plus">
+                                        <i class="ion-social-googleplus"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer> <!-- /#footer -->
+	<!-- Template Javascript Files
+	================================================== -->
+	<!-- jquery -->
+	<script src="{% static 'plugins/jQurey/jquery.min.js' %}"></script>
+	<!-- Form Validation -->
+    <script src="{% static 'plugins/form-validation/jquery.form.js' %}"></script>
+    <script src="{% static 'plugins/form-validation/jquery.validate.min.js' %}"></script>
+	<!-- slick slider -->
+	<script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+	<!-- bootstrap js -->
+	<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+	<!-- wow js -->
+	<script src="{% static 'plugins/wow-js/wow.min.js' %}"></script>
+	<!-- slider js -->
+	<script src="{% static 'plugins/slider/slider.js' %}"></script>
+	<!-- Fancybox -->
+	<script src="{% static 'plugins/facncybox/jquery.fancybox.js' %}"></script>
+	<!-- template main js -->
+	<script src="{% static 'js/main.js' %}"></script>
+ 	</body>
+</html>
