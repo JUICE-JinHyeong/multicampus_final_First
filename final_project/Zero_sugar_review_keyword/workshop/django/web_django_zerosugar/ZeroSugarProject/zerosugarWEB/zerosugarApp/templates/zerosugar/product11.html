@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+{% load static %}
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html class="no-js">
+    <head>
+        <meta charset="UTF-8">
+        <title>Zero Sugar Drinks</title>
+        <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" href="favicon.ico">
+        <title>Timer Agency Template</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="{% static 'plugins/ionicons/ionicons.min.css' %}">
+        <!-- animate css -->
+        <link rel="stylesheet" href="{% static 'plugins/animate-css/animate.css' %}">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" href="{% static 'plugins/slider/slider.css' %}">
+        <!-- slick slider -->
+        <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+        <!-- Fancybox -->
+        <link rel="stylesheet" href="{% static 'plugins/facncybox/jquery.fancybox.css' %}">
+        <!-- hover -->
+        <link rel="stylesheet" href="{% static 'plugins/hover/hover-min.css' %}">
+        <!-- template main css file -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <!-- push button css file -->
+        <!--CSS 위치 : ZeroSugarProject\zerosugarWEB\zerosugarApp\static\buttoncss-->
+        <link rel="stylesheet" href="{% static 'buttoncss/btn_push.css' %}">
+
+    </head>
+    <body> <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+<section class="top-bar animated-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="../index">
+                        <img src="{% static 'images/healthypleasure.png' %}" height="80" alt="logo">
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!--
+==================================================
+Global Page Section Start
+================================================== -->
+<section class="global-page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <div class="d-none portfolio-meta">
+            <span>Jan 13, 2022</span>|
+            <span> Category: Drinks</span>|
+            <span> website:
+              <a href="http://www.themefisher.com">Themefisher</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/#Page header-->
+
+<!-- work details part start -->
+<section class="work-single" style="padding :0px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="work-single-image">
+            <div style="clear:both:">
+
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <p style="margin-bottom : 100px"><img src="{% static 'images/portfolio/background/victoria.png' %}" height="620px" alt="portfolio items"></p>
+      <div class="col-lg-8">
+        <!-- work single Content -->
+        <div class="work-single-content">
+          <h3 style="font-weight : bold;">빅토리아 탄산수</h3>
+          <p>빅토리아 폭포수의 짜릿함을 그대로!</p>
+            <p style="font-size : 19px;font-weight : bold;"> 종류 </p>
+            <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="img-wrapper">
+                                <p style="text-align: center;">
+                                    <img src="{% static 'images/portfolio/victoria/victoria250.jpg' %}" height="170" alt="portfolio items">
+                                <p style="text-align: center;">빅토리아 스파클링 250ml</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="img-wrapper">
+                                <p style="text-align: center;">
+                                     <img src="{% static 'images/portfolio/victoria/victoria350.jpg' %}" height="170" alt="portfolio items">
+                                <p style="text-align: center;">빅토리아 스파클링 350ml</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="img-wrapper">
+                                <p style="text-align: center;">
+                                    <img src="{% static 'images/portfolio/victoria/victoriaP500.jpg' %}" height="170" alt="portfolio items">
+                                <p style="text-align: center;">빅토리아 스파클링 500ml</p>
+                            </div>
+                        </div>
+                    </div>
+                <p style="font-size : 16px; margin-top : 10px;"><span style="font-size : 19px; font-weight : bold;">성분 </span>: 빅토리아 탄산수 (500ml) 기준 <br>
+                  <span style="color:grey; font-size : 14px;">※ 100ml당 영양성분이 0.5g 미만일 경우 0mg으로 표시</span></p>
+                  <p>열량 0kcal 나트륨 0mg 탄수화물 0mg 당류 0mg 단백질 0mg 지방 0mg <br>
+                      포화지방 0mg 트랜스지방 0mg 콜레스테롤 0mg 단백질 0mg</p>
+              </div>
+
+          <!-- Blockquote -->
+<!--          <blockquote>-->
+<!--              <p></p>-->
+<!--          </blockquote>-->
+<!--          <p>3번째 설명</p>-->
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <!-- sidebar -->
+        <div class="work-single-sidebar">
+          <h5>제조사</h5>
+          <h6><a href = "https://www.wjfood.co.kr/" target="_blank">웅진식품</a></h6>
+          <h5>감미료</h5>
+          <h6>無</h6>
+        <h5>맛</h5>
+          <h6>플레인, 레몬, 라임, 자몽, 청포도, 파인애플, 복숭아, 배</h6>
+
+<!--          <h5>원산지</h5>-->
+<!--          <h6>미국</h6>-->
+<!--          <h5>출시 연도</h5>-->
+<!--          <h6>2005년</h6>-->
+          <div class="row">
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <a class="d-none btn btn-dafault btn-work hvr-bounce-to-right" href="#">페이지 탑 버튼</a>
+      </div>
+    </div>
+  </div>
+  </div>
+    <div class="container" style="margin-top : 100px; margin-bottom : 150px">
+        <div style="width:1100px; height:700px; border:0px solid green; float:center;">
+            <p style="font-weight : bold; font-size:22px;"> 빅토리아 탄산수 <span style = "color : black;">키워드</span></p>
+            <p style="margin-bottom : 50px;  font-size:15px; color:grey;"> ※ 더보기를 누르면 더 상세한 정보를 볼 수 있어요!</p>
+            <div style = "float : right">
+                <script language="javascript">function showPopup() { window.open("../victoria/grap", "빅토리아 탄산수", "width=800, height=700, left=100, top=50"); }</script>
+           <a class="button btnPush btnBlueGreen" onclick="showPopup();">더보기</a>
+       </div>
+                    <figure class = "hightcharts-figure">
+<!--                        (1100px - 850px) / 2 -->
+                        <div id="container" style="width : 80%; height: 650px; margin-left : 125px;"></div>
+                        <p class ="highcharts-dscription">
+                        </p>
+                    </figure>
+                      <script >
+             var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+
+<!-- -------------------------------------- -->
+
+               nodes['빅토리아'] = {
+                id : '빅토리아' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+<!-- -------------------------------------- -->
+
+                nodes['가격'] = {
+                id : '가격' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+               for (let nd in {'저렴하다' : 1,  '재구매':2 , '가성비':3}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : 'gold'
+                };}
+
+<!-- -------------------------------------- -->
+
+               nodes['배송'] = {
+                id : '배송' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#99f19e'
+               } ;
+
+               for (let nd in {'박스':1 , '빠르다' : 2 , '제품' : 3, '포장':4, '택배':5 }) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#99f19e'
+                };}
+
+            if (link[0] === '포장') {
+              nodes['포장'] = {
+                id: '포장',
+                marker: {
+                  radius: 15
+                },
+                color: '#99f19e'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: '#99f19e'
+              };
+            }
+
+<!-- -------------------------------------- -->
+
+               nodes['맛'] = {
+                id : '맛' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#ef5285'
+               } ;
+               for (let nd in {'청포도':1 , '레몬':5}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#ef5285'
+                };}
+
+            if (link[0] === '파인애플') {
+              nodes['파인애플'] = {
+                id: '파인애플',
+                marker: {
+                  radius: 15
+                },
+                color: '#ef5285'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: '#ef5285'
+              };
+            }
+
+<!-- -------------------------------------- -->
+
+               nodes['탄산'] = {
+                id : '탄산' ,
+                marker : {
+                   radius : 30
+                } ,
+                color : '#47b8e0'
+               } ;
+               for (let nd in {'최고':1, '음료':2}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#47b8e0'
+                };}
+            if (link[0] === '탄산음료') {
+              nodes['탄산음료'] = {
+                id: '탄산음료',
+                marker: {
+                  radius: 15
+                },
+                color: '#47b8e0'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: '#47b8e0'
+              };
+            }
+
+<!--            if (nodes[link[0]] && nodes[link[0]].color) {-->
+<!--                nodes[link[1]] = {-->
+<!--                    id: link[1],-->
+<!--                    color: 'silver' ,-->
+<!--                    marker : {-->
+<!--                        radius : 15-->
+<!--                    }-->
+<!--                    };-->
+<!--                    }-->
+
+
+
+
+              });
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 50 ,
+            height: 650
+          },
+          credits: {enabled: false},
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: false,
+                integration: 'verlet',
+                linkLength: 150
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+                  ['빅토리아' , '맛'],
+            ['빅토리아' , '배송'],
+            ['빅토리아' , '가격'],
+            ['빅토리아' , '탄산'],
+            ['맛', '청포도'], ['맛', '파인애플'], ['청포도', '파인애플'], ['청포도', '복숭아'], ['청포도', '레몬'], ['파인애플', '복숭아'], ['파인애플', '자몽'], ['파인애플', '배'], ['배송', '빠르다'], ['배송', '제품'], ['배송', '박스'], ['빠르다', '포장'], ['빠르다', '저렴하다'], ['빠르다', '가성비'], ['제품', '빠르다'], ['제품', '가격'], ['제품', '재구매'], ['박스', '포장'], ['박스', '파인애플'], ['박스', '택배'], ['가격', '저렴하다'], ['가격', '재구매'], ['가격', '빠르다'], ['저렴하다', '청포도'], ['저렴하다', '박스'], ['저렴하다', '음료'], ['재구매', '청포도'], ['재구매', '빠르다'], ['재구매', '가성비'], ['빠르다', '포장'], ['빠르다', '저렴하다'], ['빠르다', '가성비'], ['탄산', '제품'], ['탄산', '청포도'], ['탄산', '최고'], ['제품', '빠르다'], ['제품', '가격'], ['제품', '재구매'], ['청포도', '파인애플'], ['청포도', '복숭아'], ['청포도', '레몬'], ['최고', '가성비'], ['최고', '파인애플'], ['최고', '음료']]
+          }]
+        });
+        </script>
+            </div>
+        </div>
+            <div class = "container" style="margin-top : 210px; margin-bottom : 100px;">
+                <p style="font-weight : bold; font-size:22px;"> 쇼핑몰별 <span style = "color : black;">평점</span></p>
+                <p style="margin-bottom : 70px;  font-size:15px; color:grey;"> ※ 쇼핑몰 로고를 누르면 해당 제품 사이트로 이동이 가능해요!</p>
+                <div class = row style="text-align: center;">
+                    <div class="col-md-4 col-sm-6">
+                        <p style="font-size : 19px;font-weight : bold;"><a style = "color : black;" target="_blank"; href="https://brand.naver.com/woongjinfood/products/4839117051">
+                            <img src="{% static 'images/portfolio/mark/naver_mark.PNG' %}" height="35" alt="logo">  네이버쇼핑</a></p>
+                        <p style="font-size : 25px;font-weight : bold;">평점 : <span style="color:#2DB400">4.9</span> / 5</p>
+                        <p style="font-size : 17px;">(리뷰수 101,712)</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <p style="font-size : 19px;font-weight : bold;"><a style = "color : black;" target="_blank"; href="https://prod.danawa.com/info/?pcode=14738831">
+                            <img src="{% static 'images/portfolio/mark/danawa_mark.PNG' %}" height="35" alt="logo">  다나와</a></p>
+                        <p style="font-size : 25px;font-weight : bold;">평점 : <span style="color : blue;">4.8</span> / 5</p>
+                        <p style="font-size : 17px;">(리뷰수 16,661)</p>
+
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <p style="font-size : 19px;font-weight : bold;"><a style = "color : black;" target="_blank"; href="https://www.coupang.com/vp/products/131222787">
+                            <img src="{% static 'images/portfolio/mark/coupang_mark.PNG' %}" height="35" alt="logo">  쿠팡</a></p>
+                        <p style="font-size : 25px;font-weight : bold;">평점 : <span style="color:red;"> 5 </span> / 5</p>
+                        <p style="font-size : 17px;">(리뷰수 57,250)</p>
+                    </div>
+                </div>
+            </div>
+            <div class = "container" style="margin-bottom : 100px">
+                <div>
+                    <div style="margin-bottom : 50px;">
+                        <p style="margin-bottom : 50px; font-weight : bold; font-size:22px;"> 쇼핑몰별 <span style = "color : black;">대표 리뷰</span></p>
+<!--                        <div style="border-style:solid; border-color:#2DB400; padding : 20px; margin-bottom : 15px;">                        -->
+                        <div style = "padding:15px;">
+
+                            <div style="margin-bottom : 5px;">
+                                <p style = "font-weight: bold;"><img src="{% static 'images/portfolio/mark/naver_mark.PNG' %}" height="35" alt="logo"> 네이버쇼핑</p>
+                                <p style = "font-size : 14px"> 탄산수 구매할 때마다 구매하는 브랜드에요!☺️열심히 찾아봤는데, 압도적으로 최저가더라구요. 그래서 구매해봤는데, 앞으로 여기서만 주문할것같아요ㅎㅎ!!😽  💕배송 - 배송도 이틀만에 두 박스 다 왔구요!! 탄산도 전혀 빠진거 없이와서 좋았어요!  💕맛, 느낀점 - 빅토리아 탄산수가 타 브랜드에 비해 탄산은 훨씬 센데 부드럽고, 탄산수 특유의 쓴맛이 없어서 편하게 마시게 되더라구요!❤ 근데도 한번도 뚜껑 열면서 터져서 나온적이 없어요!👌</p>
+                                <p style = "font-size : 14px"> 탄산음료는 흔들리거나하면 열때 조심스럽게 열어도 막 넘쳐서 흐르는 경우가 많았는데, 신기하게 빅토리아는 배송과정에서 흔들리고 했을텐데도 한번도 넘쳐흐른적이 없어요!👍 맘 놓고 열어 마실수있더라구요.ㅎㅎ😄 저는 항상 청이나 매실을 타 마셔서 플레인만 주문하다가 처음으로 플레인이랑 레몬맛을 같이 주문해봤는데!🙂 웬걸, 맛(향)이 섞여서 이상하게 느껴지는게 전혀 없고, 순수하게 탄산수만 마실때는 향이 상큼해서 오히려 기분 좋더라구요!!💘😆 일주일도 안됐는데 한박스 다 마셔가서, 다음에 주문할때는 다른 맛도 주문해보려구요!!😊 원래 탄산수 정말 싫어했는데(쓴맛, 탄산 빨리 빠짐😑👎) 빅토리아 마셔본뒤로는 꾸준히 애용해요!😚 일반적인 탄산음료는 달게 느껴지더라구요..  💕추천 - 탄산 없인 못사는데, 탄산음료를 당 때문에라도 줄이고 싶은 분들은 꼭 마셔보세요!!💕</p>
+                            </div>
+
+                            <div style="margin-bottom : 5px;">
+                                <p style = "font-weight: bold;"><img src="{% static 'images/portfolio/mark/danawa_mark.PNG' %}" height="35" alt="logo"> 다나와</p>
+                                <p style = "font-size : 14px">후기보면 따로배송도 되고 늦게오는경우도 있다고해서 빨리오는건 기대하지않은채 어제 오후5시쯤 주문했는데요 조금전에 도착해서 너무 놀랬네요ㅋㅋㅋ 세상빠른배송에 두가지 한번에 다 받아서 기분도 좋고 유통기한도 넉넉하구요 한가지 아쉬운점은 탄산수를 매일빼먹지않고 여러종류를 먹어본 제가 웅진에서 빅토리아 출시된 초창기부터 강한탄산감과 향에 빠져 정착해서 먹던사람인지라 여러가지 맛을 먹는걸 좋아하는데 정기배송은 같은것만 구매해야해서 아쉬워요ㅠㅠ</p>
+                            </div>
+    <!--                        <div style="border-style:solid; border-color:red; padding : 20px; margin-bottom : 15px;">-->
+                            <div style="margin-bottom : 5px;">
+                                <p style = "font-weight: bold;"><img src="{% static 'images/portfolio/mark/coupang_mark.PNG' %}" height="35" alt="logo"> 쿠팡</p>
+                                <p style = "font-size : 14px">2박스 사서 한참 먹고 있네요~가장 인기많은 청포도맛, 파인맛 사봤는데 그냥 플레인할껄 그랬어요. 뭔가 미끈미끈하니 맛내려고 첨가제넣은 느낌이 좀 부자연스러운거 같아서 담엔 걍 깔끔하게 플레인으로 구매하려구요. 가격은 저렴해서 좋네요.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+<!-- work details part end -->
+
+<section class="works works-fit">
+  <div class="container">
+    <h2 class="subtitle">다른 제품들</h2>
+    <p class="d-none subtitle-des">
+      관련 음료 추천 문장1
+      <br> 관련 음료 추천 문장 2.
+    </p>
+    <div class="row">
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="300ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="{% static 'images/portfolio/oneam.jpg' %}" class="img-fluid" alt="">
+            <div class="overlay">
+              <div class="buttons">
+                <a target="_blank" href="../oneam/">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4 style="text-align: center;">
+              <a href="../oneam/">
+                원에이엠 스파클링
+              </a>
+            </h4>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="300ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="{% static 'images/portfolio/minemine.jpg' %}" class="img-fluid" alt="portfolio items">
+            <div class="overlay">
+              <div class="buttons">
+                <a target="_blank" href="../minemine/">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4 style="text-align: center;">
+              <a href="../minemine/">
+                미네마인 스파클링
+              </a>
+            </h4>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="600ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 600ms; -webkit-animation-delay: 600ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="{% static 'images/portfolio/trevi.jpg' %}" class="img-fluid" alt="">
+            <div class="overlay">
+              <div class="buttons">
+                <a target="_blank" href="../trevi/">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4 style="text-align: center;">
+              <a href="../trevi/">
+                트레비
+              </a>
+            </h4>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="300ms" data-wow-delay="0ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="{% static 'images/portfolio/reinwasser.jpg' %}" class="img-fluid" alt="portfolio items">
+            <div class="overlay">
+              <div class="buttons">
+                <a target="_blank" href="../reinwasser/">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4 style="text-align: center;">
+              <a href="../reinwasser/">
+                라인바싸 탄산수
+              </a>
+            </h4>
+          </figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+            <!--
+            ==================================================
+            Call To Action Section Start
+            ================================================== -->
+            <section id="d-none call-to-action">
+                <div class="d-none container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="block">
+                                <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">하위 섹션 제목</h2>
+                                <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">하위세션 문장1<br>하위세션 문장2.</p>
+                                <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">/contact페이지 가는 버튼</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>;
+            <!--
+            ==================================================
+            Footer Section Start
+            ================================================== -->
+            <footer id="d-none footer">
+                <div class="container">
+                    <div class="row content-justify-between">
+                        <div class="col-md-8 col-12 text-center text-lg-left text-md-left">
+                            <p class="d-none copyright">Copyright: Design and Developed by <a href="http://www.Themefisher.com" target="_blank">multi team 1</a>. <br>
+                                Get More information From Our
+                                <a href="https://themefisher.com/free-bootstrap-templates/" target="_blank">page</a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <!-- Social Media -->
+                            <ul class="d-none social text-center text-md-right text-lg-right">
+                                <li>
+                                    <a href="http://wwww.fb.com/themefisher" class="Facebook">
+                                        <i class="ion-social-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://wwww.twitter.com/themefisher" class="Twitter">
+                                        <i class="ion-social-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="Linkedin">
+                                        <i class="ion-social-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://wwww.fb.com/themefisher" class="Google Plus">
+                                        <i class="ion-social-googleplus"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer> <!-- /#footer -->
+	<!-- Template Javascript Files
+	================================================== -->
+	<!-- jquery -->
+	<script src="{% static 'plugins/jQurey/jquery.min.js' %}"></script>
+	<!-- Form Validation -->
+    <script src="{% static 'plugins/form-validation/jquery.form.js' %}"></script>
+    <script src="{% static 'plugins/form-validation/jquery.validate.min.js' %}"></script>
+	<!-- slick slider -->
+	<script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+	<!-- bootstrap js -->
+	<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+	<!-- wow js -->
+	<script src="{% static 'plugins/wow-js/wow.min.js' %}"></script>
+	<!-- slider js -->
+	<script src="{% static 'plugins/slider/slider.js' %}"></script>
+	<!-- Fancybox -->
+	<script src="{% static 'plugins/facncybox/jquery.fancybox.js' %}"></script>
+	<!-- template main js -->
+	<script src="{% static 'js/main.js' %}"></script>
+ 	</body>
+</html>

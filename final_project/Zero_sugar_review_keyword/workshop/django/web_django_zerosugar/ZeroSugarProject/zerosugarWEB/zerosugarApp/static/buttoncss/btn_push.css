@@ -1,0 +1,46 @@
+/*@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700);*/
+
+/*
+.fonts {
+  font-family: 'Josefin Slab', serif;
+}
+*/
+
+/*
+사용 클래스
+.btnBlueGreen (line91) button 색
+.btnBlueGreen.btnPush (line 126) button 그림자 색
+*/
+
+/* 3D */
+.btnBlueGreen.btnPush {
+  box-shadow: 0px 5px 0px 0px #87CEFA;
+}
+
+
+.btnPush:hover {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+a.button {
+  display: block;
+  position: relative;
+  float: left;
+  width: 120px;
+  padding: 0;
+  margin: 10px 20px 10px 0;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+  color: #FFF;
+  border-radius: 5px;
+  transition: all 0.2s ;
+}
+
+.btnBlueGreen {
+  background: #02BDD5;
+}
+.btnBlueGreen.btnPush:hover {
+  box-shadow: 0px 0px 0px 0px #007144;
+}

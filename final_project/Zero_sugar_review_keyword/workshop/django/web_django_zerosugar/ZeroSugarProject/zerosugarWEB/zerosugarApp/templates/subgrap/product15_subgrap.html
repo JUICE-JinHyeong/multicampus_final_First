@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+{% load static %}
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html class="no-js">
+    <head>
+        <meta charset="UTF-8">
+        <title>Zero Sugar Drinks</title>
+        <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+        <meta charset="UTF-8">
+        <title>/jquery/Step06_ajax.jsp</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+        <link rel="stylesheet" href="{% static 'buttoncss/btn_ujarak.css' %}">
+
+    </head>
+<!-- work details part start -->
+<body>
+<div style="width:750px; height:650px; border:0px solid green; float:center; margin: 0 auto;">
+<div style="margin-left : 48px">
+<!--    (720px - 53'(6.7 *8)'px - 450px)/2-->
+    <button class = "button button--ujarak button--border-medium button--round-s button--text-thick" name='taste' style="" id="tasteBtn" >맛</button>
+    <button class = "button button--ujarak button--border-medium button--round-s button--text-thick" name='price' style="" id="priceBtn">가격</button>
+    <button class = "button button--ujarak button--border-medium button--round-s button--text-thick" name='coke' style="" id="cokeBtn">탄산</button>
+    <button class = "button button--ujarak button--border-medium button--round-s button--text-thick" name='delievery' style="" id="delieveryBtn">배송</button>
+</div>
+
+    <figure class = "hightcharts-figure">
+        <div id="container" style="width : 650px; height: 600px; "></div>
+        <p class ="highcharts-dscription">
+        </p>
+    </figure>
+
+         <script >
+
+        let choice ;
+        let cnt = 0;
+
+            $(document).ready(function () {
+                $('#tasteBtn').click(function() {
+                    // alert('btn click');
+                    // ajax
+                    cnt = 1
+                    if (cnt == 4) {
+                        choice = 'dilivery'
+                    }
+                    else if (cnt == 1) {
+                        choice = 'taste'
+                    }
+                    else if (cnt == 2) {
+                        choice = 'price'
+                    }
+                    else if (cnt == 3) {
+                        choice = 'coke'
+                    };
+
+
+                    $.ajax({
+                        type : 'get',           // 타입 (get, post, put 등등)
+                        url : '../ajax',
+                        async : true,            // 비동기화 여부 (default : true)
+                        headers : {              // Http header
+                          "Content-Type" : "application/json",
+                          "X-HTTP-Method-Override" : "POST"
+                        },
+                        dataType : 'json',       // 데이터 타입 (html, xml, json, text 등등)
+                        data : JSON.stringify({  // 보낼 데이터 (Object , String, Array)
+                          "id" : "taste",
+                          "num" : "1"
+                        }),
+                        success : function(result) { // 결과 성공 콜백함수
+                    <!--        debugger-->
+                    <!--        alert('success');-->
+                    <!--        console.log(result);-->
+                                chart(result)
+                    },
+                        error : function(request, status, error) { // 결과 에러 콜백함수
+                            console.log(error)
+                        }
+                    })
+                            });
+                        });
+
+<!-- ------------------------------------------------------------------------------>
+            $(document).ready(function () {
+                $('#priceBtn').click(function() {
+                    // alert('btn click');
+                    // ajax
+                    cnt = 2
+                    if (cnt == 4) {
+                        choice = 'dilivery'
+                    }
+                    else if (cnt == 1) {
+                        choice = 'taste'
+                    }
+                    else if (cnt == 2) {
+                        choice = 'price'
+                    }
+                    else if (cnt == 3) {
+                        choice = 'coke'
+                    };
+
+
+                    $.ajax({
+                        type : 'get',           // 타입 (get, post, put 등등)
+                        url : '../ajax',
+                        async : true,            // 비동기화 여부 (default : true)
+                        headers : {              // Http header
+                          "Content-Type" : "application/json",
+                          "X-HTTP-Method-Override" : "POST"
+                        },
+                        dataType : 'json',       // 데이터 타입 (html, xml, json, text 등등)
+                        data : JSON.stringify({  // 보낼 데이터 (Object , String, Array)
+                          "id" : "taste",
+                          "num" : "1"
+                        }),
+                        success : function(result) { // 결과 성공 콜백함수
+                    <!--        debugger-->
+                    <!--        alert('success');-->
+                    <!--        console.log(result);-->
+                                chart(result)
+                    },
+                        error : function(request, status, error) { // 결과 에러 콜백함수
+                            console.log(error)
+                        }
+                    })
+                            });
+                        });
+<!-- ------------------------------------------------------------------------------>
+            $(document).ready(function () {
+                $('#cokeBtn').click(function() {
+                    // alert('btn click');
+                    // ajax
+                    cnt = 3
+                    if (cnt == 4) {
+                        choice = 'dilivery'
+                    }
+                    else if (cnt == 1) {
+                        choice = 'taste'
+                    }
+                    else if (cnt == 2) {
+                        choice = 'price'
+                    }
+                    else if (cnt == 3) {
+                        choice = 'coke'
+                    };
+
+
+                    $.ajax({
+                        type : 'get',           // 타입 (get, post, put 등등)
+                        url : '../ajax',
+                        async : true,            // 비동기화 여부 (default : true)
+                        headers : {              // Http header
+                          "Content-Type" : "application/json",
+                          "X-HTTP-Method-Override" : "POST"
+                        },
+                        dataType : 'json',       // 데이터 타입 (html, xml, json, text 등등)
+                        data : JSON.stringify({  // 보낼 데이터 (Object , String, Array)
+                          "id" : "taste",
+                          "num" : "1"
+                        }),
+                        success : function(result) { // 결과 성공 콜백함수
+                    <!--        debugger-->
+                    <!--        alert('success');-->
+                    <!--        console.log(result);-->
+                                chart(result)
+                    },
+                        error : function(request, status, error) { // 결과 에러 콜백함수
+                            console.log(error)
+                        }
+                    })
+                            });
+                        });
+<!-- ------------------------------------------------------------------------------>
+            $(document).ready(function () {
+                $('#delieveryBtn').click(function() {
+                    // alert('btn click');
+                    // ajax
+                    cnt = 4
+                    if (cnt == 4) {
+                        choice = 'dilivery'
+                    }
+                    else if (cnt == 1) {
+                        choice = 'taste'
+                    }
+                    else if (cnt == 2) {
+                        choice = 'price'
+                    }
+                    else if (cnt == 3) {
+                        choice = 'coke'
+                    };
+
+
+                    $.ajax({
+                        type : 'get',           // 타입 (get, post, put 등등)
+                        url : '../ajax',
+                        async : true,            // 비동기화 여부 (default : true)
+                        headers : {              // Http header
+                          "Content-Type" : "application/json",
+                          "X-HTTP-Method-Override" : "POST"
+                        },
+                        dataType : 'json',       // 데이터 타입 (html, xml, json, text 등등)
+                        data : JSON.stringify({  // 보낼 데이터 (Object , String, Array)
+                          "id" : "taste",
+                          "num" : "1"
+                        }),
+                        success : function(result) { // 결과 성공 콜백함수
+                    <!--        debugger-->
+                    <!--        alert('success');-->
+                    <!--        console.log(result);-->
+                                chart(result)
+                    },
+                        error : function(request, status, error) { // 결과 에러 콜백함수
+                            console.log(error)
+                        }
+                    })
+                            });
+                        });
+<!-- ------------------------------------------------------------------------------>
+
+        function chart(result){
+                        let review_input_lst = [];
+
+                        for(let data of result.Seagram) {
+                            if(data.id == choice){
+                                let i = 0;
+                                while(i<data.review_01.length){
+                                    review_input_lst.push([data.review_01[i] , data.review_02[i]]);
+                                    i = i+1;
+                                }
+                            }
+                        }
+                        console.log(review_input_lst)
+
+                    <!-- -------------------------------------- -->
+
+                            console.log('>>>>>>>>>>')
+                            //console.log(lst)
+                            Highcharts.addEvent(
+                              Highcharts.Series,
+                              'afterSetOptions',
+                              function (e) {
+                                var colors = Highcharts.getOptions().colors,
+                                  i = 3,
+                                  nodes = {};
+                                if (
+                                  this instanceof Highcharts.Series.types.networkgraph &&
+                                  e.options.id === 'language-tree'
+                                ) {
+                                  e.options.data.forEach(function (link) {
+
+
+
+                            if (choice == 'taste') {
+                                   nodes['맛'] = {
+                                    id : '맛' ,
+                                    marker : {
+                                        radius : 20
+                                    }
+                                   } ;
+                              nodes[link[1]] = {
+                                id: link[1],
+                                marker: {
+                                  radius: 10
+                                },
+                                color: colors[i++]
+                              };
+                            } else if (choice == 'price') {
+                                   nodes['가격'] = {
+                                    id : '가격' ,
+                                    marker : {
+                                        radius : 20
+                                    }
+                                   } ;
+                              nodes[link[1]] = {
+                                id: link[1],
+                                marker: {
+                                  radius: 10
+                                },
+                                color: colors[i++]
+                              };
+                            } else if (choice == 'coke') {
+                                   nodes['탄산'] = {
+                                    id : '탄산' ,
+                                    marker : {
+                                        radius : 20
+                                    }
+                                   } ;
+                              nodes[link[1]] = {
+                                id: link[1],
+                                marker: {
+                                  radius: 10
+                                },
+                                color: colors[i++]
+                              };
+                            } else if (choice == 'dilivery') {
+                                    nodes['배송'] = {
+                                    id : '배송' ,
+                                    marker : {
+                                        radius : 20
+                                    }
+                                   } ;
+                              nodes[link[1]] = {
+                                id: link[1],
+                                marker: {
+                                  radius: 10
+                                },
+                                color: colors[i++]
+                              };
+                            }
+
+                               if (nodes[link[0]] && nodes[link[0]].color) {
+                                    nodes[link[1]] = {
+                                        id: link[1],
+                                        color: nodes[link[0]].color ,
+                                        marker : {
+                                            radius : 10
+                                        }
+                                        };
+                                        }
+                            if (choice == 'taste') {
+                                   nodes['맛'] = {
+                                    id : '맛' ,
+                                    marker : {
+                                        radius : 20
+                                    } ,
+                                    color : '#90EE90'
+
+                                   } ;
+                            } else if (choice == 'price') {
+                                   nodes['가격'] = {
+                                    id : '가격' ,
+                                    marker : {
+                                        radius : 20
+                                    } ,
+                                    color : '#90EE90'
+                                   } ;
+                            } else if (choice == 'coke') {
+                                   nodes['탄산'] = {
+                                    id : '탄산' ,
+                                    marker : {
+                                        radius : 20
+                                    } ,
+                                    color : '#90EE90'
+                                   } ;
+                            } else if (choice == 'dilivery') {
+                                    nodes['배송'] = {
+                                    id : '배송' ,
+                                    marker : {
+                                        radius : 20
+                                    } ,
+                                    color : '#90EE90'
+                                   } ;
+                            }
+
+                                  });
+                                  e.options.nodes = Object.keys(nodes).map(function (id) {
+                                    return nodes[id];
+                                  });
+                                }
+                              }
+                            );
+
+                            Highcharts.chart('container', {
+                              chart: {
+                                type: 'networkgraph',
+                                marginTop: 50 ,
+                                height: 600 ,
+                                width: 650   ,
+                                style : {
+                                    textOutline: false
+                                } ,
+                                backgroundColor:'rgba(255, 255, 255, 0)'
+                              },
+                              credits: {enabled: false},
+                              title: {
+                                text: ''
+                              },
+
+                              subtitle: {
+                                text: ''
+                              },
+                              plotOptions: {
+                                networkgraph: {
+                                  keys: ['from', 'to'],
+                                  layoutAlgorithm: {
+                                    enableSimulation: false,
+                                    integration: 'verlet',
+                                    linkLength: 100
+                                  }
+                                }
+                              },
+                              series: [{
+                                id: 'language-tree',
+                                marker: {
+                                  radius: 25
+                                },
+                                dataLabels: {
+                                  enabled: true,
+                                  textPath: {
+                                    enabled: true
+                                  },
+                                  linkFormat: '',
+                                  allowOverlap: false
+                                                          },
+                                data:review_input_lst
+                              }]
+                            });
+
+
+
+                    <!-- -------------------------------------- -->
+                    }
+
+
+
+
+                </script>
+        </div>
+	<!-- Template Javascript Files
+	================================================== -->
+	<!-- jquery -->
+	<script src="{% static 'plugins/jQurey/jquery.min.js' %}"></script>
+	<!-- Form Validation -->
+    <script src="{% static 'plugins/form-validation/jquery.form.js' %}"></script>
+    <script src="{% static 'plugins/form-validation/jquery.validate.min.js' %}"></script>
+	<!-- slick slider -->
+	<script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+	<!-- bootstrap js -->
+	<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+	<!-- wow js -->
+	<script src="{% static 'plugins/wow-js/wow.min.js' %}"></script>
+	<!-- slider js -->
+	<script src="{% static 'plugins/slider/slider.js' %}"></script>
+	<!-- Fancybox -->
+	<script src="{% static 'plugins/facncybox/jquery.fancybox.js' %}"></script>
+	<!-- template main js -->
+	<script src="{% static 'js/main.js' %}"></script>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,631 @@
+
+<!DOCTYPE html>
+{% load static %}
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html class="no-js">
+    <head>
+        <meta charset="UTF-8">
+        <title>Zero Sugar Drinks</title>
+        <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" href="favicon.ico">
+        <title>Timer Agency Template</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="{% static 'plugins/ionicons/ionicons.min.css' %}">
+        <!-- animate css -->
+        <link rel="stylesheet" href="{% static 'plugins/animate-css/animate.css' %}">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" href="{% static 'plugins/slider/slider.css' %}">
+        <!-- slick slider -->
+        <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+        <!-- Fancybox -->
+        <link rel="stylesheet" href="{% static 'plugins/facncybox/jquery.fancybox.css' %}">
+        <!-- hover -->
+        <link rel="stylesheet" href="{% static 'plugins/hover/hover-min.css' %}">
+        <!-- template main css file -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <!-- push button css file -->
+        <!--CSS 위치 : ZeroSugarProject\zerosugarWEB\zerosugarApp\static\buttoncss-->
+        <link rel="stylesheet" href="{% static 'buttoncss/btn_push.css' %}">
+
+    </head>
+    <body> <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+<section class="top-bar animated-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="../index">
+                        <img src="{% static 'images/healthypleasure.png' %}" height="80" alt="logo">
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!--
+==================================================
+Global Page Section Start
+================================================== -->
+<section class="global-page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <div class="d-none portfolio-meta">
+            <span>Jan 13, 2022</span>|
+            <span> Category: Drinks</span>|
+            <span> website:
+              <a href="http://www.themefisher.com">Themefisher</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/#Page header-->
+
+<!-- work details part start -->
+<section class="work-single" style="padding :0px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="work-single-image">
+            <div style="clear:both:">
+
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <p style="margin-bottom : 100px"><img src="{% static 'images/portfolio/background/narandzero.PNG' %}" height="640px" alt="portfolio items"></p>
+      <div class="col-lg-8">
+        <!-- work single Content -->
+        <div class="work-single-content">
+          <h3 style="font-weight : bold;">나랑드 사이다 제로</h3>
+          <p>"언제나 0칼로리 탄산" 오늘, 가볍게 나랑드실래요?</p>
+          <p style="font-size : 19px;font-weight : bold;"> 종류 </p>
+            <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="img-wrapper">
+                                <p style="text-align: center;">
+                                    <img src="{% static 'images/portfolio/narangd/narangd245.jpg' %}" height="170" alt="portfolio items">
+                                <p style="text-align: center;">나랑드 사이다 제로 245ml</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="img-wrapper">
+                                <p style="text-align: center;">
+                                     <img src="{% static 'images/portfolio/narangd/narangdP500.jpg' %}" height="170" alt="portfolio items">
+                                <p style="text-align: center;">나랑드 사이다 제로 500ml</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="img-wrapper">
+                                <p style="text-align: center;">
+                                    <img src="{% static 'images/portfolio/narangd/narangdP1.5.jpg' %}" height="170" alt="portfolio items">
+                                <p style="text-align: center;">나랑드 사이다 제로 1.5L</p>
+                            </div>
+                        </div>
+                    </div>
+                <p style="font-size : 16px; margin-top : 10px;"><span style="font-size : 19px; font-weight : bold;">성분 </span>: 나랑드 사이다 (245ml) 기준 <br>
+                  <span style="color:grey; font-size : 14px;">※ 100ml당 영양성분이 0.5g 미만일 경우 0mg으로 표시</span></p>
+                  <p>열량 0kcal 나트륨 45mg 탄수화물 0mg 당류 0mg 단백질 0mg 지방 0mg <br>
+                      포화지방 0mg 트랜스지방 0mg 콜레스테롤 0mg 단백질 0mg</p>
+              </div>
+
+          <!-- Blockquote -->
+<!--          <blockquote>-->
+<!--              <p></p>-->
+<!--          </blockquote>-->
+<!--          <p>3번째 설명</p>-->
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <!-- sidebar -->
+        <div class="work-single-sidebar">
+          <h5>제조사</h5>
+          <h6><a href = "https://www.donga-otsuka.co.kr/" target="_blank">동아오츠카</a></h6>
+          <h5>감미료</h5>
+          <h6>
+              <span title="설탕보다 600배 강한 단맛을 가진 무열량 감미료이다.."><a href = "https://ko.wikipedia.org/wiki/수크랄로스" target="_blank">수크랄로스</a></span>,
+              <span title="설탕보다 200배의 단맛을, 아스파탐 만큼의 단맛을 가진 인공감미료."><a href = "https://ko.wikipedia.org/wiki/아세설팜_칼륨" target="_blank">아세설팜_칼륨</a></span>
+          </h6>
+           <h5>맛</h5>
+            <h6>기본, 파인애플 , 그린애플</h6>
+
+<!--          <h5>원산지</h5>-->
+<!--          <h6>미국</h6>-->
+<!--          <h5>출시 연도</h5>-->
+<!--          <h6>2005년</h6>-->
+          <div class="row">
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <a class="d-none btn btn-dafault btn-work hvr-bounce-to-right" href="#">페이지 탑 버튼</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+    <div class="container" style="margin-top : 100px; margin-bottom : 150px">
+        <div style="width:1100px; height:700px; border:0px solid green; float:center;">
+            <p style="font-weight : bold; font-size:22px;"> 나랑드 사이다 제로 <span style = "color : black;">키워드</span></p>
+            <p style="margin-bottom : 50px;  font-size:15px; color:grey;"> ※ 더보기를 누르면 더 상세한 정보를 볼 수 있어요!</p>
+            <div style = "float : right">
+                <script language="javascript">function showPopup() { window.open("../narangd/grap", "나랑드사이다 제로", "width=800, height=700, left=100, top=50"); }</script>
+           <a class="button btnPush btnBlueGreen" onclick="showPopup();">더보기</a>
+       </div>
+                    <figure class = "hightcharts-figure">
+<!--                        (1100px - 850px) / 2 -->
+                        <div id="container" style="width : 80%; height: 650px; margin-left : 125px;"></div>
+                        <p class ="highcharts-dscription">
+                        </p>
+                    </figure>
+                      <script >
+            var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+<!-- -------------------------------------- -->
+
+               nodes['나랑드사이다'] = {
+                id : '나랑드사이다' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+<!-- -------------------------------------- -->
+
+                nodes['가격'] = {
+                id : '가격' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+               for (let nd in {'구매':1 }) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : 'gold'
+                };}
+
+<!-- -------------------------------------- -->
+
+               nodes['배송'] = {
+                id : '배송' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#99f19e'
+               } ;
+
+               for (let nd in {'빠르다':1 , '재구매':2 , '포장':3 , '유효':7 , '제품':8 }) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#99f19e'
+                };}
+
+
+<!-- -------------------------------------- -->
+
+               nodes['맛'] = {
+                id : '맛' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#ef5285'
+               } ;
+               for (let nd in {'제로':1 , '부담없음':2 , }) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#ef5285'
+                };}
+
+            if (link[0] === '칼로리') {
+              nodes['칼로리'] = {
+                id: '칼로리',
+                marker: {
+                  radius: 15
+                },
+                color: '#ef5285'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: '#ef5285'
+              };
+            }
+
+<!-- -------------------------------------- -->
+
+               nodes['탄산'] = {
+                id : '탄산' ,
+                marker : {
+                   radius : 30
+                } ,
+                color : '#47b8e0'
+               } ;
+               for (let nd in {'캔':1 , '박스':2 , '탄산음료':3, '음료':4, '하루':5 , '다이어트':6 , '필수':7, '최고':8}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#47b8e0'
+                };}
+            if (link[0] === '단맛') {
+              nodes['단맛'] = {
+                id: '단맛',
+                marker: {
+                  radius: 15
+                },
+                color: '#47b8e0'
+              };
+              nodes[link[1]] = {
+                id: link[1],
+                marker: {
+                  radius: 15
+                },
+                color: '#47b8e0'
+              };
+            }
+
+<!--            if (nodes[link[0]] && nodes[link[0]].color) {-->
+<!--                nodes[link[1]] = {-->
+<!--                    id: link[1],-->
+<!--                    color: 'silver' ,-->
+<!--                    marker : {-->
+<!--                        radius : 15-->
+<!--                    }-->
+<!--                    };-->
+<!--                    }-->
+
+
+              });
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 50 ,
+            height: 650
+          },
+          credits: {enabled: false},
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: false,
+                integration: 'verlet',
+                linkLength: 150
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+            ['나랑드사이다' , '맛'],
+            ['나랑드사이다' , '배송'],
+            ['나랑드사이다' , '가격'],
+            ['나랑드사이다' , '탄산'],
+            ['맛', '칼로리'],
+['맛', '칼로리'], ['맛', '제로'], ['맛', '포장'], ['칼로리', '부담없음'], ['칼로리', '탄산'], ['칼로리', '걱정'], ['제로', '칼로리'], ['제로', '탄산'], ['제로', '부담없음'], ['포장', '유효'], ['배송', '빠르다'], ['배송', '구매'], ['배송', '제품'], ['빠르다', '가격'], ['빠르다', '제품'], ['빠르다', '포장'], ['구매', '가격'], ['구매', '맛'], ['구매', '나랑드사이다'], ['제품', '재구매'], ['제품', '포장'], ['가격', '제품'], ['가격', '칼로리'], ['제품', '재구매'], ['제품', '포장'], ['칼로리', '부담없음'], ['칼로리', '탄산'], ['칼로리', '걱정'], ['탄산', '다이어트'], ['탄산', '음료'], ['탄산', '캔'], ['다이어트', '탄산음료'], ['다이어트', '최고'], ['다이어트', '필수'], ['음료', '다이어트'], ['음료', '캔'], ['음료', '최고'], ['캔', '박스'], ['캔', '하루'], ['캔', '부담없음']]
+
+          }]
+        });
+        </script>
+            </div>
+        </div>
+
+            <div class = "container" style="margin-top : 210px; margin-bottom : 100px;">
+                <p style="font-weight : bold; font-size:22px;"> 쇼핑몰별 <span style = "color : black;">평점</span></p>
+                <p style="margin-bottom : 70px;  font-size:15px; color:grey;"> ※ 쇼핑몰 로고를 누르면 해당 제품 사이트로 이동이 가능해요!</p>
+                <div class = row style="text-align: center;">
+                    <div class="col-md-4 col-sm-6">
+                        <p style="font-size : 19px;font-weight : bold;"><a style = "color : black;" target="_blank"; href="https://smartstore.naver.com/donga-otsuka/products/5737533784">
+                            <img src="{% static 'images/portfolio/mark/naver_mark.PNG' %}" height="35" alt="logo">  네이버쇼핑</a></p>
+                        <p style="font-size : 25px;font-weight : bold;">평점 : <span style="color:#2DB400">4.9</span> / 5</p>
+                        <p style="font-size : 17px;">(리뷰수 2,447)</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <p style="font-size : 19px;font-weight : bold;"><a style = "color : black;" target="_blank"; href="https://prod.danawa.com/info/?pcode=4209514">
+                            <img src="{% static 'images/portfolio/mark/danawa_mark.PNG' %}" height="35" alt="logo">  다나와</a></p>
+                        <p style="font-size : 25px;font-weight : bold;">평점 : <span style="color : blue;">4.8</span> / 5</p>
+                        <p style="font-size : 17px;">(리뷰수 4,623)</p>
+
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <p style="font-size : 19px;font-weight : bold;"><a style = "color : black;" target="_blank"; href="https://www.coupang.com/vp/products/2510991">
+                            <img src="{% static 'images/portfolio/mark/coupang_mark.PNG' %}" height="35" alt="logo">  쿠팡</a></p>
+                        <p style="font-size : 25px;font-weight : bold;">평점 : <span style="color:red;"> 5 </span> / 5</p>
+                        <p style="font-size : 17px;">(리뷰수 99,687)</p>
+                    </div>
+                </div>
+            </div>
+            <div class = "container" style="margin-bottom : 100px">
+                <div>
+                    <div style="margin-bottom : 50px;">
+                        <p style="margin-bottom : 50px; font-weight : bold; font-size:22px;"> 쇼핑몰별 <span style = "color : black;">대표 리뷰</span></p>
+<!--                        <div style="border-style:solid; border-color:#2DB400; padding : 20px; margin-bottom : 15px;">                        -->
+                        <div style = "padding:15px;">
+
+                            <div style="margin-bottom : 5px;">
+                                <p style = "font-weight: bold;"><img src="{% static 'images/portfolio/mark/naver_mark.PNG' %}" height="35" alt="logo"> 네이버쇼핑</p>
+                                <p style = "font-size : 14px">항상 집에 떨어지지 않게 구입해두는 상비식품 2 입니다. 최근래 약간 탄산을 안먹으면서 이번엔 조금 늦게 구입했는데 언제나 항상 몇 년간 꼭 사두는 제품이예요  정말 나랑드의 매력을 모르는 사람들이 불쌍해요!!! <<< 드립이니 감정상해하니 마세요!!ㅋㅋ  일반 탄산은 너무 달아서 설탕 끈적함이 입안에 심하고 탄산수도 좋아하긴 한데 가끔 쓰게 느껴지기도 하거든요 근데 이 제품은 탄산음료와 탄산수의 장점만 섞인 제품이 아닐까 합니다  일반 사이다에 과실청이나 스무디액 섞어먹으면 칼로리 폭탄일 것을 나랑드에 타먹으면 과실청의 칼로리와 당분만 섭취할 수 있어요 그리고 훨씬 맛도 깔끔합니다  나랑드는 무조건 차갑게 얼음이랑 드셔야해요 그럼 탄산도 강하고 정말 청량해요.... 전 일반 콜라는 절대 못마셔요.. 너무 끈적임 ㅠㅠㅋㅋ배송중 2개가 터졌다고 했는데우리 지역 넘 친절한 롯데택배 기사님께서 배송전에 연락주셔서빠른 반품 새제품 받았습니다기사님도 빠른 응대해준 판매자님도 감사드려요</p>
+                            </div>
+
+                            <div style="margin-bottom : 5px;">
+                                <p style = "font-weight: bold;"><img src="{% static 'images/portfolio/mark/danawa_mark.PNG' %}" height="35" alt="logo"> 다나와</p>
+                                <p style = "font-size : 14px">이거 불량 제품만 파는건가요? 2박스 주문인데 큰 박스 한 박스에 포장되어서 왔는데 다 찌그러지고 한 박스는 비닐도 훼손되어 있고 검은 먼지들이 수북하네요 택배 기사님이 불쌍해서 그냥 반품은 하지 않지만 이런 판매처 퇴출해야 하는거 아닌가요? 삼성임직원으로 할인 많이 되어서 혜택이라고 생각하고 샀는데 기분 안 좋네요 화가나서 귀찮지만 사진도 올리고 긴 글도 올립니다</p>
+                            </div>
+    <!--                        <div style="border-style:solid; border-color:red; padding : 20px; margin-bottom : 15px;">-->
+                            <div style="margin-bottom : 5px;">
+                                <p style = "font-weight: bold;"><img src="{% static 'images/portfolio/mark/coupang_mark.PNG' %}" height="35" alt="logo"> 쿠팡</p>
+                                <p style = "font-size : 14px">탄산음료 좋아하시나요? 다이어트중에도 생각나는~ 목젖을 간지럽혀주는 탄산음료~ 하지만, 과당때문에 살 찔까봐 걱정되고, 건강에 안좋을까봐 걱정되시죠? 우리가 어릴때부터 줄곧 마셔온 박카스를 만든 동아오츠카에서 만든 과당 등 건강에 좋지 않은 4가지가 없는 건강한 탄산음료이자 맛도 과당탄산음료가 거의 비슷해서 이 여름에 맥주 생각도 없애주고, 건강에도 무리없는 이 음료수 추천합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+</section>
+<!-- work details part end -->
+
+<section class="works works-fit">
+  <div class="container">
+    <h2 class="subtitle">다른 제품들</h2>
+    <p class="d-none subtitle-des">
+      관련 음료 추천 문장1
+      <br> 관련 음료 추천 문장 2.
+    </p>
+    <div class="row">
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="300ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="{% static 'images/portfolio/burrcider.jpg' %}" class="img-fluid" alt="">
+            <div class="overlay">
+              <div class="buttons">
+                <a target="_blank" href="../burrcider/">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4 style="text-align: center;">
+              <a href="../burrcider/">
+                부르르 제로사이다
+              </a>
+            </h4>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="300ms" data-wow-delay="0ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="{% static 'images/portfolio/nobrand.jpg' %}" class="img-fluid" alt="portfolio items">
+            <div class="overlay">
+              <div class="buttons">
+                <a target="_blank" href="../nobrand/">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4 style="text-align: center;">
+              <a href="../nobrand/">
+                노브랜드 스파클링
+              </a>
+            </h4>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="300ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="{% static 'images/portfolio/welchs.jpg' %}" class="img-fluid" alt="portfolio items">
+            <div class="overlay">
+              <div class="buttons">
+                <a target="_blank" href="../welchs/">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4 style="text-align: center;">
+              <a href="../welchs/">
+                웰치스 제로
+              </a>
+            </h4>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="600ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 600ms; -webkit-animation-delay: 600ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="{% static 'images/portfolio/oneam.jpg' %}" class="img-fluid" alt="">
+            <div class="overlay">
+              <div class="buttons">
+                <a target="_blank" href="../oneam/">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4 style="text-align: center;">
+              <a href="../oneam/">
+                원에이엠 스파클링
+              </a>
+            </h4>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+            <!--
+            ==================================================
+            Call To Action Section Start
+            ================================================== -->
+            <section id="d-none call-to-action">
+                <div class="d-none container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="block">
+                                <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">하위 섹션 제목</h2>
+                                <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">하위세션 문장1<br>하위세션 문장2.</p>
+                                <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">/contact페이지 가는 버튼</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>;
+            <!--
+            ==================================================
+            Footer Section Start
+            ================================================== -->
+            <footer id="d-none footer">
+                <div class="container">
+                    <div class="row content-justify-between">
+                        <div class="col-md-8 col-12 text-center text-lg-left text-md-left">
+                            <p class="d-none copyright">Copyright: Design and Developed by <a href="http://www.Themefisher.com" target="_blank">multi team 1</a>. <br>
+                                Get More information From Our
+                                <a href="https://themefisher.com/free-bootstrap-templates/" target="_blank">page</a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <!-- Social Media -->
+                            <ul class="d-none social text-center text-md-right text-lg-right">
+                                <li>
+                                    <a href="http://wwww.fb.com/themefisher" class="Facebook">
+                                        <i class="ion-social-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://wwww.twitter.com/themefisher" class="Twitter">
+                                        <i class="ion-social-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="Linkedin">
+                                        <i class="ion-social-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://wwww.fb.com/themefisher" class="Google Plus">
+                                        <i class="ion-social-googleplus"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer> <!-- /#footer -->
+	<!-- Template Javascript Files
+	================================================== -->
+	<!-- jquery -->
+	<script src="{% static 'plugins/jQurey/jquery.min.js' %}"></script>
+	<!-- Form Validation -->
+    <script src="{% static 'plugins/form-validation/jquery.form.js' %}"></script>
+    <script src="{% static 'plugins/form-validation/jquery.validate.min.js' %}"></script>
+	<!-- slick slider -->
+	<script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+	<!-- bootstrap js -->
+	<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+	<!-- wow js -->
+	<script src="{% static 'plugins/wow-js/wow.min.js' %}"></script>
+	<!-- slider js -->
+	<script src="{% static 'plugins/slider/slider.js' %}"></script>
+	<!-- Fancybox -->
+	<script src="{% static 'plugins/facncybox/jquery.fancybox.js' %}"></script>
+	<!-- template main js -->
+	<script src="{% static 'js/main.js' %}"></script>
+ 	</body>
+</html>

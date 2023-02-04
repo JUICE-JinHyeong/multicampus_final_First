@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+{% load static %}
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html class="no-js">
+    <head>
+        <meta charset="UTF-8">
+        <title>Zero Sugar Drinks</title>
+        <!-- 2. 사이트 html 하단 script 태그 위치 -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" href="favicon.ico">
+        <title>Timer Agency Template</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="{% static 'plugins/ionicons/ionicons.min.css' %}">
+        <!-- animate css -->
+        <link rel="stylesheet" href="{% static 'plugins/animate-css/animate.css' %}">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" href="{% static 'plugins/slider/slider.css' %}">
+        <!-- slick slider -->
+        <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+        <!-- Fancybox -->
+        <link rel="stylesheet" href="{% static 'plugins/facncybox/jquery.fancybox.css' %}">
+        <!-- hover -->
+        <link rel="stylesheet" href="{% static 'plugins/hover/hover-min.css' %}">
+        <!-- template main css file -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <!-- push button css file -->
+        <!--CSS 위치 : ZeroSugarProject\zerosugarWEB\zerosugarApp\static\buttoncss-->
+        <link rel="stylesheet" href="{% static 'buttoncss/btn_push.css' %}">
+
+    </head>
+    <body> <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+<section class="top-bar animated-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="../index">
+                        <img src="{% static 'images/healthypleasure.png' %}" height="80" alt="logo">
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!--
+==================================================
+Global Page Section Start
+================================================== -->
+<section class="global-page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <div class="d-none portfolio-meta">
+            <span>Jan 13, 2022</span>|
+            <span> Category: Drinks</span>|
+            <span> website:
+              <a href="http://www.themefisher.com">Themefisher</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/#Page header-->
+
+<!-- work details part start -->
+<section class="work-single" style="padding :0px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="work-single-image">
+            <div style="clear:both:">
+
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <p style="margin-bottom : 100px"><img src="{% static 'images/portfolio/background/burrzero_02.PNG' %}" height="800px" alt="portfolio items"></p>
+      <div class="col-lg-8">
+        <!-- work single Content -->
+        <div class="work-single-content">
+          <h3 style="font-weight : bold;">부르르 제로 콜라</h3>
+          <p>더 상쾌하게, 더 달콤하게, 0kcal로 더 가볍게</p>
+            <p style="font-size : 19px;font-weight : bold;"> 종류 </p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="img-wrapper">
+                                <p style="text-align: center;">
+                                    <img src="{% static 'images/portfolio/brrcola/brrcola250.jpg' %}" height="170" alt="portfolio items">
+                                <p style="text-align: center;">부르르 제로콜라250ml</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="img-wrapper">
+                                <p style="text-align: center;">
+                                     <img src="{% static 'images/portfolio/brrcola/brrcola350.jpg' %}" height="170" alt="portfolio items">
+                                <p style="text-align: center;">부르르 제로콜라350ml</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="img-wrapper">
+                                <p style="text-align: center;">
+                                    <img src="{% static 'images/portfolio/brrcola/brrcolaP1.5.jpg' %}" height="170" alt="portfolio items">
+                                <p style="text-align: center;">부르르 제로콜라1.5L</p>
+                            </div>
+                        </div>
+                    </div>
+                  <p style="font-size : 16px; margin-top : 10px;"><span style="font-size : 19px; font-weight : bold;">성분 </span>: 부르르 제로콜라 (250ml) 기준 <br>
+                  <span style="color:grey; font-size : 14px;">※ 100ml당 영양성분이 0.5g 미만일 경우 0mg으로 표시</span></p>
+                  <p>열량 0kcal 나트륨 15mg 탄수화물 0mg 당류 0mg 단백질 0mg 지방 0mg <br>
+                      포화지방 0mg 트랜스지방 0mg 콜레스테롤 0mg 단백질 0mg</p>
+
+              </div>
+
+          <!-- Blockquote -->
+<!--          <blockquote>-->
+<!--              <p></p>-->
+<!--          </blockquote>-->
+<!--          <p>3번째 설명</p>-->
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <!-- sidebar -->
+        <div class="work-single-sidebar">
+          <h5>제조사</h5>
+          <h6><a href = "https://www.ilhwamall.co.kr/" target="_blank">일화</a></h6>
+          <h5>감미료</h5>
+          <h6>
+              <span title="설탕보다 600배 강한 단맛을 가진 무열량 감미료이다.."><a href = "https://ko.wikipedia.org/wiki/수크랄로스" target="_blank">수크랄로스</a></span>,
+              <span title="설탕보다 200배의 단맛을, 아스파탐 만큼의 단맛을 가진 인공감미료."><a href = "https://ko.wikipedia.org/wiki/아세설팜_칼륨" target="_blank">아세설팜_칼륨</a></span>
+          </h6>
+
+<!--          <h5>원산지</h5>-->
+<!--          <h6>미국</h6>-->
+<!--          <h5>출시 연도</h5>-->
+<!--          <h6>2005년</h6>-->
+          <div class="row">
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <a class="d-none btn btn-dafault btn-work hvr-bounce-to-right" href="#">페이지 탑 버튼</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+    <div class="container" style="margin-top : 100px; margin-bottom : 150px">
+        <div style="width:1100px; height:700px; border:0px solid green; float:center;">
+            <p style="font-weight : bold; font-size:22px;"> 부르르 제로 콜라 <span style = "color : black;">키워드</span></p>
+            <p style="margin-bottom : 50px;  font-size:15px; color:grey;"> ※ 더보기를 누르면 더 상세한 정보를 볼 수 있어요!</p>
+            <div style = "float : right">
+                <script language="javascript">function showPopup() { window.open("../burrcola/grap", "부르르 제로콜라", "width=800, height=700, left=100, top=50"); }</script>
+           <a class="button btnPush btnBlueGreen" onclick="showPopup();">더보기</a>
+       </div>
+                    <figure class = "hightcharts-figure">
+<!--                        (1100px - 850px) / 2 -->
+                        <div id="container" style="width : 80%; height: 650px; margin-left : 125px;"></div>
+                        <p class ="highcharts-dscription">
+                        </p>
+                    </figure>
+                      <script >
+           var lst = {{data}}
+        console.log('>>>>>>>>>>')
+        //console.log(lst)
+        Highcharts.addEvent(
+          Highcharts.Series,
+          'afterSetOptions',
+          function (e) {
+            var colors = Highcharts.getOptions().colors,
+              i = 0,
+              nodes = {};
+            if (
+              this instanceof Highcharts.Series.types.networkgraph &&
+              e.options.id === 'language-tree'
+            ) {
+              e.options.data.forEach(function (link) {
+
+<!-- -------------------------------------- -->
+
+               nodes['부르르 제로콜라'] = {
+                id : '부르르 제로콜라' ,
+                marker : {
+                    radius : 40
+                    } ,
+                    color : '#00FFFF'
+               };
+
+<!-- -------------------------------------- -->
+
+                nodes['가격'] = {
+                id : '가격' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : 'gold'
+               } ;
+               for (let nd in {'저렴하다' : 1, '최고':2 , '가성비':3 , '재구매':4 }) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : 'gold'
+                };}
+
+<!-- -------------------------------------- -->
+
+               nodes['배송'] = {
+                id : '배송' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#99f19e'
+               } ;
+
+               for (let nd in {'빠르다' : 2 , '도착' : 3 , '마음' :4 , '캔':6 , '포장':7
+                ,'제품':10  }) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#99f19e'
+                };}
+
+<!--            if (link[0] === '포장') {-->
+<!--              nodes['포장'] = {-->
+<!--                id: '포장',-->
+<!--                marker: {-->
+<!--                  radius: 15-->
+<!--                },-->
+<!--                color: '#99f19e'-->
+<!--              };-->
+<!--              nodes[link[1]] = {-->
+<!--                id: link[1],-->
+<!--                marker: {-->
+<!--                  radius: 15-->
+<!--                },-->
+<!--                color: '#99f19e'-->
+<!--              };-->
+<!--            }-->
+
+<!-- -------------------------------------- -->
+
+               nodes['맛'] = {
+                id : '맛' ,
+                marker : {
+                    radius : 30
+                } ,
+                color : '#ef5285'
+               } ;
+               for (let nd in {'콜라':1 , '구매':2 , '제로':3 }) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#ef5285'
+                };}
+
+<!--            if (link[0] === '파인애플') {-->
+<!--              nodes['파인애플'] = {-->
+<!--                id: '파인애플',-->
+<!--                marker: {-->
+<!--                  radius: 15-->
+<!--                },-->
+<!--                color: '#ef5285'-->
+<!--              };-->
+<!--              nodes[link[1]] = {-->
+<!--                id: link[1],-->
+<!--                marker: {-->
+<!--                  radius: 15-->
+<!--                },-->
+<!--                color: '#ef5285'-->
+<!--              };-->
+<!--            }-->
+
+<!-- -------------------------------------- -->
+
+               nodes['탄산'] = {
+                id : '탄산' ,
+                marker : {
+                   radius : 30
+                } ,
+                color : '#47b8e0'
+               } ;
+               for (let nd in {'제로콜라':1 , '생각':2, '펩시':3, '처음':4}) {
+                nodes[nd] = {
+                    id : nd ,
+                    marker : {
+                        radius : 15
+                    } ,
+                    color : '#47b8e0'
+                };}
+<!--            if (link[0] === '탄산음료') {-->
+<!--              nodes['탄산음료'] = {-->
+<!--                id: '탄산음료',-->
+<!--                marker: {-->
+<!--                  radius: 15-->
+<!--                },-->
+<!--                color: '#47b8e0'-->
+<!--              };-->
+<!--              nodes[link[1]] = {-->
+<!--                id: link[1],-->
+<!--                marker: {-->
+<!--                  radius: 15-->
+<!--                },-->
+<!--                color: '#47b8e0'-->
+<!--              };-->
+<!--            }-->
+
+<!--            if (nodes[link[0]] && nodes[link[0]].color) {-->
+<!--                nodes[link[1]] = {-->
+<!--                    id: link[1],-->
+<!--                    color: 'silver' ,-->
+<!--                    marker : {-->
+<!--                        radius : 15-->
+<!--                    }-->
+<!--                    };-->
+<!--                    }-->
+
+
+              });
+
+              e.options.nodes = Object.keys(nodes).map(function (id) {
+                return nodes[id];
+              });
+            }
+          }
+        );
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'networkgraph',
+            marginTop: 50 ,
+            height: 650
+          },
+          credits: {enabled: false},
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          plotOptions: {
+            networkgraph: {
+              keys: ['from', 'to'],
+              layoutAlgorithm: {
+                enableSimulation: false,
+                integration: 'verlet',
+                linkLength: 150
+              }
+            }
+          },
+          series: [{
+            id: 'language-tree',
+            marker: {
+              radius: 25
+            },
+            dataLabels: {
+              enabled: true,
+              textPath: {
+                enabled: true
+              },
+              linkFormat: '',
+              allowOverlap: true
+            },
+            data: [
+            ['부르르 제로콜라' , '맛'],
+            ['부르르 제로콜라' , '배송'],
+            ['부르르 제로콜라' , '가격'],
+            ['부르르 제로콜라' , '탄산'],
+['맛', '콜라'], ['맛', '제로'], ['맛', '제로콜라'], ['콜라', '제로'], ['콜라', '탄산'], ['콜라', '구매'], ['제로', '탄산'], ['제로', '가격'], ['제로', '구매'], ['제로콜라', '가격'], ['제로콜라', '가성비'], ['제로콜라', '생각'], ['배송', '빠르다'], ['배송', '제품'], ['배송', '가성비'], ['빠르다', '포장'], ['빠르다', '마음'], ['빠르다', '도착'], ['제품', '생각'], ['제품', '빠르다'], ['제품', '캔'], ['가성비', '최고'], ['가성비', '재구매'], ['가격', '저렴하다'], ['가격', '생각'], ['가격', '가성비'], ['저렴하다', '가성비'], ['저렴하다', '제품'], ['저렴하다', '캔'], ['생각', '캔'], ['생각', '처음'], ['생각', '펩시'], ['가성비', '최고'], ['가성비', '재구매'], ['탄산', '제로콜라'], ['탄산', '가성비'], ['탄산', '생각'], ['제로콜라', '가격'], ['제로콜라', '가성비'], ['제로콜라', '생각'], ['가성비', '최고'], ['가성비', '재구매'],  ['생각', '캔'], ['생각', '처음'], ['생각', '펩시']]
+
+          }]
+        });
+        </script>
+            </div>
+        </div>
+            <div class = "container" style="margin-top : 210px; margin-bottom : 100px;">
+                <p style="font-weight : bold; font-size:22px;"> 쇼핑몰별 <span style = "color : black;">평점</span></p>
+                <p style="margin-bottom : 70px;  font-size:15px; color:grey;"> ※ 쇼핑몰 로고를 누르면 해당 제품 사이트로 이동이 가능해요!</p>
+                <div class = row style="text-align: center;">
+                    <div class="col-md-4 col-sm-6">
+                        <p style="font-size : 19px;font-weight : bold;"><a style = "color : black;" target="_blank"; href="https://search.shopping.naver.com/catalog/29582401677">
+                            <img src="{% static 'images/portfolio/mark/naver_mark.PNG' %}" height="35" alt="logo">  네이버쇼핑</a></p>
+                        <p style="font-size : 25px;font-weight : bold;">평점 : <span style="color:#2DB400">4.8</span> / 5</p>
+                        <p style="font-size : 17px;">(리뷰수 5,813)</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <p style="font-size : 19px;font-weight : bold;"><a style = "color : black;" target="_blank"; href="https://prod.danawa.com/info/?pcode=13653680">
+                            <img src="{% static 'images/portfolio/mark/danawa_mark.PNG' %}" height="35" alt="logo">  다나와</a></p>
+                        <p style="font-size : 25px;font-weight : bold;">평점 : <span style="color : blue;">4.7</span> / 5</p>
+                        <p style="font-size : 17px;">(리뷰수 5,196)</p>
+
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <p style="font-size : 19px;font-weight : bold;"><a style = "color : black;" target="_blank"; href="https://www.coupang.com/vp/products/6976298818">
+                            <img src="{% static 'images/portfolio/mark/coupang_mark.PNG' %}" height="35" alt="logo">  쿠팡</a></p>
+                        <p style="font-size : 25px;font-weight : bold;">평점 : <span style="color:red;"> 5 </span> / 5</p>
+                        <p style="font-size : 17px;">(리뷰수 23,705)</p>
+                    </div>
+                </div>
+            </div>
+            <div class = "container" style="margin-bottom : 100px">
+                <div>
+                    <div style="margin-bottom : 50px;">
+                        <p style="margin-bottom : 50px; font-weight : bold; font-size:22px;"> 쇼핑몰별 <span style = "color : black;">대표 리뷰</span></p>
+<!--                        <div style="border-style:solid; border-color:#2DB400; padding : 20px; margin-bottom : 15px;">                        -->
+                        <div style = "padding:15px;">
+
+                            <div style="margin-bottom : 5px;">
+                                <p style = "font-weight: bold;"><img src="{% static 'images/portfolio/mark/naver_mark.PNG' %}" height="35" alt="logo"> 네이버쇼핑</p>
+                                <p style = "font-size : 14px">815 비슷한 것 같기도 하고 그냥 어렸을 때 문방구에서 사먹던 해태콜라같은 콜라가향 탄산 음료맛 납니다. 펩시 비슷하기도 하고요.(향은 그냥 콜라향 풍선껌 같은 기본적인 콜라 착향료 향?) 탄산 적당하고 제로콜라치곤 일반콜라같은 괜찮은 단맛과 깔끔한 맛을 지녔습니다. 누구는 밍밍하다고도 느낄 수도 있는데 시럽이 아니라 대체단미료를 넣은 제로 콜라다 보니 일반콜라같은 부드럽고 깊은 당분의 맛은 부족하지만 입에 단맛과 끈적함이 남지않아 깔끔하고 가장 좋은 점은 칼로리가 제로죠. 호불호가 갈릴수도 있는데 저는 이런 콜라도 좋아해서 좋았습니다. 어렸을 때 향수를 불러일으키는 맛이기도 하고요. (그냥 세상에 모든 콜라를 사랑합니다.)</p>
+                            </div>
+
+                            <div style="margin-bottom : 5px;">
+                                <p style = "font-weight: bold;"><img src="{% static 'images/portfolio/mark/danawa_mark.PNG' %}" height="35" alt="logo"> 다나와</p>
+                                <p style = "font-size : 14px">저는 탄산 중독 수준으로 정말 탄산 음료를 너무 좋아합니다. 그 중 특히 콜라를 좋아하는데요 너무 자주 마시다보니 과다 당 섭취가 걱정되어 당뇨가 올까 걱정되더라구요. 그래서 당이 제로인 제로 탄산 음료를 알아봤고 첫 시작은 펩* 라임으로 했어요. 이것도 맛있었지만 좀 더 저렴하고 맛있게 즐길 수 있는 대체 음료를 알아봤더니 사람들이 부르르 제로 콜라를 많이 추천하더라구요.부르르 콜라의 첫 맛은 컨디션 때문인지 아니면 다른 음식과 함께 먹어서 그랬는지 몰라도 탄산 맛이 엄청 강하게 느껴졌지만 다시 두 번째로 먹었을 때는 처음과는 다르게 그냥 펩* 제로 콜라와 맛이 거의 비슷하고 달달하게 느껴지더라구요. 아마 제 컨디션 문제였거나 두번째엔 금세 맛에 익숙해졌나봐요.계속해서 먹을수록 앞으로도 계속 자주 애용하게 될 것 같아요.동생이랑 사촌 동생에게도 줘봤더니 맛있다고 해서 더 갖다줬어요.주변 사람들에게도 충분히 더 추천할 수 있을 것 같습니다 :)</p>
+                            </div>
+    <!--                        <div style="border-style:solid; border-color:red; padding : 20px; margin-bottom : 15px;">-->
+                            <div style="margin-bottom : 5px;">
+                                <p style = "font-weight: bold;"><img src="{% static 'images/portfolio/mark/coupang_mark.PNG' %}" height="35" alt="logo"> 쿠팡</p>
+                                <p style = "font-size : 14px">쿠팡에서 부르르제로콜라를 처음 시켜 먹어보고 처음엔 맛이 밍밍한거 같아서 안먹으려했어요. 그런데 먹을수록 중독되고 오히려 지금은 깔끔하고덜달아서 이젠 코카콜라맛이 이상할정도에요. 코카콜라제로는 먹고나면 단맛이 끝에 찝찝하게 남아있는데 부르르는 그게 없어서 좋아요. 그래서 벌써 재구매만 10번이상은 한거 같아요ㅎㅎ 다만 쿠팡에서도 느꼈듯이 부르르콜라는 박스가 약간 허술함이 있어요 한개 시키면 박스가 터질거 같은...ㅠ그래도 제품에 이상이 없어서 항상 그냥 먹습니다. 네이버에선 처음 시켜봤는데 배송도 적당히 빠르고 겉에 박스가 젖어 왔지만 속에는 이상없어 다행이네요 유통기한도 내년8월로 길어요 다먹고 또 주문할게요ㅎㅎㅎ많이 파세요</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+</section>
+<!-- work details part end -->
+
+<section class="works works-fit">
+  <div class="container">
+    <h2 class="subtitle">다른 제품들</h2>
+    <p class="d-none subtitle-des">
+      관련 음료 추천 문장1
+      <br> 관련 음료 추천 문장 2.
+    </p>
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="300ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="{% static 'images/portfolio/pepsi.jpg' %}" class="img-fluid" alt="portfolio items">
+            <div class="overlay">
+              <div class="buttons">
+                <a target="_blank" href="../pepsicola/">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4 style="text-align: center;">
+              <a href="../pepsicola/">
+                펩시콜라 제로슈가
+              </a>
+            </h4>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="300ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="{% static 'images/portfolio/sprite_01.jpg' %}" class="img-fluid" alt="">
+            <div class="overlay">
+              <div class="buttons">
+                <a target="_blank" href="../sprite/">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4 style="text-align: center;">
+              <a href="../sprite/">
+                스프라이트 제로
+              </a>
+            </h4>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="600ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 600ms; -webkit-animation-delay: 600ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="{% static 'images/portfolio/chilsung.jpg' %}" class="img-fluid" alt="">
+            <div class="overlay">
+              <div class="buttons">
+                <a target="_blank" href="../chilsung/">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4 style="text-align: center;">
+              <a href="../chilsung/">
+                칠성사이다 제로
+              </a>
+            </h4>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="300ms" data-wow-delay="0ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="{% static 'images/portfolio/burrcider.jpg' %}" class="img-fluid" alt="portfolio items">
+            <div class="overlay">
+              <div class="buttons">
+                <a target="_blank" href="../burrcider/">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4 style="text-align: center;">
+              <a href="../burrcider/">
+                부르르 제로사이다
+              </a>
+            </h4>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+            <!--
+            ==================================================
+            Call To Action Section Start
+            ================================================== -->
+            <section id="d-none call-to-action">
+                <div class="d-none container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="block">
+                                <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">하위 섹션 제목</h2>
+                                <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">하위세션 문장1<br>하위세션 문장2.</p>
+                                <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">/contact페이지 가는 버튼</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>;
+            <!--
+            ==================================================
+            Footer Section Start
+            ================================================== -->
+            <footer id="d-none footer">
+                <div class="container">
+                    <div class="row content-justify-between">
+                        <div class="col-md-8 col-12 text-center text-lg-left text-md-left">
+                            <p class="d-none copyright">Copyright: Design and Developed by <a href="http://www.Themefisher.com" target="_blank">multi team 1</a>. <br>
+                                Get More information From Our
+                                <a href="https://themefisher.com/free-bootstrap-templates/" target="_blank">page</a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <!-- Social Media -->
+                            <ul class="d-none social text-center text-md-right text-lg-right">
+                                <li>
+                                    <a href="http://wwww.fb.com/themefisher" class="Facebook">
+                                        <i class="ion-social-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://wwww.twitter.com/themefisher" class="Twitter">
+                                        <i class="ion-social-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="Linkedin">
+                                        <i class="ion-social-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://wwww.fb.com/themefisher" class="Google Plus">
+                                        <i class="ion-social-googleplus"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer> <!-- /#footer -->
+	<!-- Template Javascript Files
+	================================================== -->
+	<!-- jquery -->
+	<script src="{% static 'plugins/jQurey/jquery.min.js' %}"></script>
+	<!-- Form Validation -->
+    <script src="{% static 'plugins/form-validation/jquery.form.js' %}"></script>
+    <script src="{% static 'plugins/form-validation/jquery.validate.min.js' %}"></script>
+	<!-- slick slider -->
+	<script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+	<!-- bootstrap js -->
+	<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+	<!-- wow js -->
+	<script src="{% static 'plugins/wow-js/wow.min.js' %}"></script>
+	<!-- slider js -->
+	<script src="{% static 'plugins/slider/slider.js' %}"></script>
+	<!-- Fancybox -->
+	<script src="{% static 'plugins/facncybox/jquery.fancybox.js' %}"></script>
+	<!-- template main js -->
+	<script src="{% static 'js/main.js' %}"></script>
+ 	</body>
+</html>
